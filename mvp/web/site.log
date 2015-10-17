@@ -5501,3 +5501,665 @@ ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
 [25/Oct/2016:18:49:54] ENGINE Started monitor thread '_TimeoutMonitor'.
 [25/Oct/2016:18:49:54] ENGINE Serving on http://0.0.0.0:8080
 [25/Oct/2016:18:49:54] ENGINE Bus STARTED
+[25/Oct/2016:22:53:57] ENGINE Caught signal SIGHUP.
+[25/Oct/2016:22:53:57] ENGINE SIGHUP caught but not daemonized. Exiting.
+[25/Oct/2016:22:53:57] ENGINE Bus STOPPING
+[25/Oct/2016:22:53:57] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+[25/Oct/2016:22:53:57] ENGINE Stopped thread '_TimeoutMonitor'.
+[25/Oct/2016:22:53:57] ENGINE Bus STOPPED
+[25/Oct/2016:22:53:57] ENGINE Bus EXITING
+[25/Oct/2016:22:53:57] ENGINE Bus EXITED
+[25/Oct/2016:22:53:57] ENGINE Caught signal SIGTERM.
+[25/Oct/2016:22:53:57] ENGINE Bus STOPPING
+[25/Oct/2016:22:53:57] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[25/Oct/2016:22:53:57] ENGINE No thread running for None.
+[25/Oct/2016:22:53:57] ENGINE Bus STOPPED
+[25/Oct/2016:22:53:57] ENGINE Bus EXITING
+[25/Oct/2016:22:53:57] ENGINE Bus EXITED
+[25/Oct/2016:22:53:57] ENGINE Caught signal SIGHUP.
+[25/Oct/2016:22:53:57] ENGINE SIGHUP caught but not daemonized. Exiting.
+[25/Oct/2016:22:53:57] ENGINE Bus STOPPING
+[25/Oct/2016:22:53:57] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[25/Oct/2016:22:53:57] ENGINE No thread running for None.
+[25/Oct/2016:22:53:57] ENGINE Bus STOPPED
+[25/Oct/2016:22:53:57] ENGINE Bus EXITING
+[25/Oct/2016:22:53:57] ENGINE Bus EXITED
+[25/Oct/2016:22:53:57] ENGINE Waiting for child threads to terminate...
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:32] ENGINE Bus STARTING
+[17/Oct/2015:01:07:32] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:33] ENGINE Serving on http://0.0.0.0:8080
+[17/Oct/2015:01:07:33] ENGINE Bus STARTED
+[17/Oct/2015:01:07:33] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:33] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:33] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:33] ENGINE Bus STARTING
+[17/Oct/2015:01:07:33] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:38] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x7641b1f0>>
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 203, in publish
+    output.append(listener(*args, **kwargs))
+  File "/usr/lib/python2.7/site-packages/cherrypy/_cpserver.py", line 168, in start
+    ServerAdapter.start(self)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 170, in start
+    wait_for_free_port(*self.bind_addr)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 438, in wait_for_free_port
+    raise IOError("Port %r not free on %r" % (port, host))
+IOError: Port 8080 not free on '0.0.0.0'
+
+[17/Oct/2015:01:07:38] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 241, in start
+    self.publish('start')
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 221, in publish
+    raise exc
+ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
+
+[17/Oct/2015:01:07:38] ENGINE Bus STOPPING
+[17/Oct/2015:01:07:38] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:07:38] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:38] ENGINE Bus STOPPED
+[17/Oct/2015:01:07:38] ENGINE Bus EXITING
+[17/Oct/2015:01:07:38] ENGINE Bus EXITED
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:31] ENGINE Bus STARTING
+[17/Oct/2015:01:07:31] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:32] ENGINE Bus STARTING
+[17/Oct/2015:01:07:32] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:32] ENGINE Serving on http://0.0.0.0:8080
+[17/Oct/2015:01:07:32] ENGINE Bus STARTED
+[17/Oct/2015:01:07:37] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x763851f0>>
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 203, in publish
+    output.append(listener(*args, **kwargs))
+  File "/usr/lib/python2.7/site-packages/cherrypy/_cpserver.py", line 168, in start
+    ServerAdapter.start(self)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 170, in start
+    wait_for_free_port(*self.bind_addr)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 438, in wait_for_free_port
+    raise IOError("Port %r not free on %r" % (port, host))
+IOError: Port 8080 not free on '0.0.0.0'
+
+[17/Oct/2015:01:07:37] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 241, in start
+    self.publish('start')
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 221, in publish
+    raise exc
+ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
+
+[17/Oct/2015:01:07:37] ENGINE Bus STOPPING
+[17/Oct/2015:01:07:37] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:07:37] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:37] ENGINE Bus STOPPED
+[17/Oct/2015:01:07:37] ENGINE Bus EXITING
+[17/Oct/2015:01:07:37] ENGINE Bus EXITED
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:31] ENGINE Bus STARTING
+[17/Oct/2015:01:07:31] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:31] ENGINE Serving on http://0.0.0.0:8080
+[17/Oct/2015:01:07:31] ENGINE Bus STARTED
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:31] ENGINE Bus STARTING
+[17/Oct/2015:01:07:31] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:37] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x7642c1f0>>
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 203, in publish
+    output.append(listener(*args, **kwargs))
+  File "/usr/lib/python2.7/site-packages/cherrypy/_cpserver.py", line 168, in start
+    ServerAdapter.start(self)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 170, in start
+    wait_for_free_port(*self.bind_addr)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 438, in wait_for_free_port
+    raise IOError("Port %r not free on %r" % (port, host))
+IOError: Port 8080 not free on '0.0.0.0'
+
+[17/Oct/2015:01:07:37] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 241, in start
+    self.publish('start')
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 221, in publish
+    raise exc
+ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
+
+[17/Oct/2015:01:07:37] ENGINE Bus STOPPING
+[17/Oct/2015:01:07:37] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:07:37] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:37] ENGINE Bus STOPPED
+[17/Oct/2015:01:07:37] ENGINE Bus EXITING
+[17/Oct/2015:01:07:37] ENGINE Bus EXITED
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:31] ENGINE Bus STARTING
+[17/Oct/2015:01:07:31] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:32] ENGINE Bus STARTING
+[17/Oct/2015:01:07:32] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:32] ENGINE Serving on http://0.0.0.0:8080
+[17/Oct/2015:01:07:32] ENGINE Bus STARTED
+[17/Oct/2015:01:07:37] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x7645f1f0>>
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 203, in publish
+    output.append(listener(*args, **kwargs))
+  File "/usr/lib/python2.7/site-packages/cherrypy/_cpserver.py", line 168, in start
+    ServerAdapter.start(self)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 170, in start
+    wait_for_free_port(*self.bind_addr)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 438, in wait_for_free_port
+    raise IOError("Port %r not free on %r" % (port, host))
+IOError: Port 8080 not free on '0.0.0.0'
+
+[17/Oct/2015:01:07:37] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 241, in start
+    self.publish('start')
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 221, in publish
+    raise exc
+ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
+
+[17/Oct/2015:01:07:37] ENGINE Bus STOPPING
+[17/Oct/2015:01:07:37] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:07:37] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:37] ENGINE Bus STOPPED
+[17/Oct/2015:01:07:37] ENGINE Bus EXITING
+[17/Oct/2015:01:07:37] ENGINE Bus EXITED
+[17/Oct/2015:01:11:19] ENGINE Caught signal SIGHUP.
+[17/Oct/2015:01:11:19] ENGINE SIGHUP caught but not daemonized. Exiting.
+[17/Oct/2015:01:11:19] ENGINE Bus STOPPING
+[17/Oct/2015:01:11:19] ENGINE Caught signal SIGHUP.
+[17/Oct/2015:01:11:19] ENGINE SIGHUP caught but not daemonized. Exiting.
+[17/Oct/2015:01:11:19] ENGINE Bus STOPPING
+[17/Oct/2015:01:11:19] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:11:19] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:11:19] ENGINE Bus STOPPED
+[17/Oct/2015:01:11:19] ENGINE Bus EXITING
+[17/Oct/2015:01:11:19] ENGINE Bus EXITED
+[17/Oct/2015:01:11:19] ENGINE Caught signal SIGTERM.
+[17/Oct/2015:01:11:19] ENGINE Bus STOPPING
+[17/Oct/2015:01:11:19] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:11:19] ENGINE No thread running for None.
+[17/Oct/2015:01:11:19] ENGINE Bus STOPPED
+[17/Oct/2015:01:11:19] ENGINE Bus EXITING
+[17/Oct/2015:01:11:19] ENGINE Bus EXITED
+[17/Oct/2015:01:11:19] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+[17/Oct/2015:01:11:19] ENGINE No thread running for None.
+[17/Oct/2015:01:11:19] ENGINE Bus STOPPED
+[17/Oct/2015:01:11:19] ENGINE Bus EXITING
+[17/Oct/2015:01:11:19] ENGINE Bus EXITED
+[17/Oct/2015:01:11:19] ENGINE Waiting for child threads to terminate...
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:31] ENGINE Bus STARTING
+[17/Oct/2015:01:07:31] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:32] ENGINE Bus STARTING
+[17/Oct/2015:01:07:32] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:32] ENGINE Serving on http://0.0.0.0:8080
+[17/Oct/2015:01:07:32] ENGINE Bus STARTED
+[17/Oct/2015:01:07:37] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x763871f0>>
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 203, in publish
+    output.append(listener(*args, **kwargs))
+  File "/usr/lib/python2.7/site-packages/cherrypy/_cpserver.py", line 168, in start
+    ServerAdapter.start(self)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 170, in start
+    wait_for_free_port(*self.bind_addr)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 438, in wait_for_free_port
+    raise IOError("Port %r not free on %r" % (port, host))
+IOError: Port 8080 not free on '0.0.0.0'
+
+[17/Oct/2015:01:07:37] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 241, in start
+    self.publish('start')
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 221, in publish
+    raise exc
+ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
+
+[17/Oct/2015:01:07:37] ENGINE Bus STOPPING
+[17/Oct/2015:01:07:37] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:07:37] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:37] ENGINE Bus STOPPED
+[17/Oct/2015:01:07:37] ENGINE Bus EXITING
+[17/Oct/2015:01:07:37] ENGINE Bus EXITED
+[17/Oct/2015:01:32:15] ENGINE Caught signal SIGHUP.
+[17/Oct/2015:01:32:15] ENGINE SIGHUP caught but not daemonized. Exiting.
+[17/Oct/2015:01:32:15] ENGINE Bus STOPPING
+[17/Oct/2015:01:32:15] ENGINE Caught signal SIGHUP.
+[17/Oct/2015:01:32:15] ENGINE SIGHUP caught but not daemonized. Exiting.
+[17/Oct/2015:01:32:15] ENGINE Bus STOPPING
+[17/Oct/2015:01:32:15] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:32:15] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:32:15] ENGINE Bus STOPPED
+[17/Oct/2015:01:32:15] ENGINE Bus EXITING
+[17/Oct/2015:01:32:15] ENGINE Bus EXITED
+[17/Oct/2015:01:32:15] ENGINE Caught signal SIGTERM.
+[17/Oct/2015:01:32:15] ENGINE Bus STOPPING
+[17/Oct/2015:01:32:15] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:32:15] ENGINE No thread running for None.
+[17/Oct/2015:01:32:15] ENGINE Bus STOPPED
+[17/Oct/2015:01:32:15] ENGINE Bus EXITING
+[17/Oct/2015:01:32:15] ENGINE Bus EXITED
+[17/Oct/2015:01:32:15] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+[17/Oct/2015:01:32:15] ENGINE No thread running for None.
+[17/Oct/2015:01:32:15] ENGINE Bus STOPPED
+[17/Oct/2015:01:32:15] ENGINE Bus EXITING
+[17/Oct/2015:01:32:15] ENGINE Bus EXITED
+[17/Oct/2015:01:32:15] ENGINE Waiting for child threads to terminate...
+[17/Oct/2015:01:07:33] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:33] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:33] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:33] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:33] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:33] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:33] ENGINE Bus STARTING
+[17/Oct/2015:01:07:33] ENGINE Bus STARTING
+[17/Oct/2015:01:07:33] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:33] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:33] ENGINE Error in HTTP server: shutting down
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 205, in _start_http_thread
+    self.httpserver.start()
+  File "/usr/lib/python2.7/site-packages/cherrypy/wsgiserver/wsgiserver2.py", line 1939, in start
+    self.socket.listen(self.request_queue_size)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 98] Address already in use
+
+[17/Oct/2015:01:07:33] ENGINE Bus STOPPING
+[17/Oct/2015:01:07:33] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:07:33] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:33] ENGINE Bus STOPPED
+[17/Oct/2015:01:07:33] ENGINE Bus EXITING
+[17/Oct/2015:01:07:33] ENGINE Bus EXITED
+[17/Oct/2015:01:07:33] ENGINE Serving on http://0.0.0.0:8080
+[17/Oct/2015:01:07:33] ENGINE Bus STARTED
+[17/Oct/2015:01:08:57] ENGINE Caught signal SIGHUP.
+[17/Oct/2015:01:08:57] ENGINE SIGHUP caught but not daemonized. Exiting.
+[17/Oct/2015:01:08:57] ENGINE Bus STOPPING
+[17/Oct/2015:01:08:58] ENGINE Caught signal SIGHUP.
+[17/Oct/2015:01:08:58] ENGINE SIGHUP caught but not daemonized. Exiting.
+[17/Oct/2015:01:08:58] ENGINE Bus STOPPING
+[17/Oct/2015:01:08:58] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:08:58] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:08:58] ENGINE Bus STOPPED
+[17/Oct/2015:01:08:58] ENGINE Bus EXITING
+[17/Oct/2015:01:08:58] ENGINE Bus EXITED
+[17/Oct/2015:01:08:58] ENGINE Caught signal SIGTERM.
+[17/Oct/2015:01:08:58] ENGINE Bus STOPPING
+[17/Oct/2015:01:08:58] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:08:58] ENGINE No thread running for None.
+[17/Oct/2015:01:08:58] ENGINE Bus STOPPED
+[17/Oct/2015:01:08:58] ENGINE Bus EXITING
+[17/Oct/2015:01:08:58] ENGINE Bus EXITED
+[17/Oct/2015:01:08:58] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+[17/Oct/2015:01:08:58] ENGINE No thread running for None.
+[17/Oct/2015:01:08:58] ENGINE Bus STOPPED
+[17/Oct/2015:01:08:58] ENGINE Bus EXITING
+[17/Oct/2015:01:08:58] ENGINE Bus EXITED
+[17/Oct/2015:01:08:58] ENGINE Waiting for child threads to terminate...
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:32] ENGINE Bus STARTING
+[17/Oct/2015:01:07:32] ENGINE Bus STARTING
+[17/Oct/2015:01:07:32] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:32] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:32] ENGINE Error in HTTP server: shutting down
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 205, in _start_http_thread
+    self.httpserver.start()
+  File "/usr/lib/python2.7/site-packages/cherrypy/wsgiserver/wsgiserver2.py", line 1939, in start
+    self.socket.listen(self.request_queue_size)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 98] Address already in use
+
+[17/Oct/2015:01:07:32] ENGINE Bus STOPPING
+[17/Oct/2015:01:07:32] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:07:32] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:32] ENGINE Bus STOPPED
+[17/Oct/2015:01:07:32] ENGINE Bus EXITING
+[17/Oct/2015:01:07:33] ENGINE Bus EXITED
+[17/Oct/2015:01:07:33] ENGINE Serving on http://0.0.0.0:8080
+[17/Oct/2015:01:07:33] ENGINE Bus STARTED
+[17/Oct/2015:01:07:44] ENGINE Keyboard Interrupt: shutting down bus
+[17/Oct/2015:01:07:44] ENGINE Bus STOPPING
+[17/Oct/2015:01:07:44] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+[17/Oct/2015:01:07:44] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:44] ENGINE Bus STOPPED
+[17/Oct/2015:01:07:44] ENGINE Bus EXITING
+[17/Oct/2015:01:07:44] ENGINE Bus EXITED
+[17/Oct/2015:01:07:44] ENGINE Waiting for child threads to terminate...
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:31] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:31] ENGINE Bus STARTING
+[17/Oct/2015:01:07:31] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:32] ENGINE Serving on http://0.0.0.0:8080
+[17/Oct/2015:01:07:32] ENGINE Bus STARTED
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:07:32] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:07:32] ENGINE Bus STARTING
+[17/Oct/2015:01:07:32] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:37] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x763d21f0>>
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 203, in publish
+    output.append(listener(*args, **kwargs))
+  File "/usr/lib/python2.7/site-packages/cherrypy/_cpserver.py", line 168, in start
+    ServerAdapter.start(self)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 170, in start
+    wait_for_free_port(*self.bind_addr)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 438, in wait_for_free_port
+    raise IOError("Port %r not free on %r" % (port, host))
+IOError: Port 8080 not free on '0.0.0.0'
+
+[17/Oct/2015:01:07:37] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 241, in start
+    self.publish('start')
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 221, in publish
+    raise exc
+ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
+
+[17/Oct/2015:01:07:37] ENGINE Bus STOPPING
+[17/Oct/2015:01:07:37] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:07:37] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:07:37] ENGINE Bus STOPPED
+[17/Oct/2015:01:07:37] ENGINE Bus EXITING
+[17/Oct/2015:01:07:37] ENGINE Bus EXITED
+[17/Oct/2015:01:13:38] ENGINE Caught signal SIGHUP.
+[17/Oct/2015:01:13:38] ENGINE SIGHUP caught but not daemonized. Exiting.
+[17/Oct/2015:01:13:38] ENGINE Bus STOPPING
+[17/Oct/2015:01:13:38] ENGINE Caught signal SIGHUP.
+[17/Oct/2015:01:13:38] ENGINE SIGHUP caught but not daemonized. Exiting.
+[17/Oct/2015:01:13:38] ENGINE Bus STOPPING
+[17/Oct/2015:01:13:38] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:13:38] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:13:38] ENGINE Bus STOPPED
+[17/Oct/2015:01:13:38] ENGINE Bus EXITING
+[17/Oct/2015:01:13:38] ENGINE Bus EXITED
+[17/Oct/2015:01:13:38] ENGINE Caught signal SIGTERM.
+[17/Oct/2015:01:13:38] ENGINE Bus STOPPING
+[17/Oct/2015:01:13:38] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:13:38] ENGINE No thread running for None.
+[17/Oct/2015:01:13:38] ENGINE Bus STOPPED
+[17/Oct/2015:01:13:38] ENGINE Bus EXITING
+[17/Oct/2015:01:13:38] ENGINE Bus EXITED
+[17/Oct/2015:01:13:38] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+[17/Oct/2015:01:13:38] ENGINE No thread running for None.
+[17/Oct/2015:01:13:38] ENGINE Bus STOPPED
+[17/Oct/2015:01:13:38] ENGINE Bus EXITING
+[17/Oct/2015:01:13:38] ENGINE Bus EXITED
+[17/Oct/2015:01:13:38] ENGINE Waiting for child threads to terminate...
+[17/Oct/2015:01:10:52] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:10:52] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:10:52] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:10:52] ENGINE Bus STARTING
+[17/Oct/2015:01:10:52] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:10:53] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:10:53] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:10:53] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:10:53] ENGINE Bus STARTING
+[17/Oct/2015:01:10:53] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:10:53] ENGINE Serving on http://0.0.0.0:8080
+[17/Oct/2015:01:10:53] ENGINE Bus STARTED
+[17/Oct/2015:01:10:58] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x763de1f0>>
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 203, in publish
+    output.append(listener(*args, **kwargs))
+  File "/usr/lib/python2.7/site-packages/cherrypy/_cpserver.py", line 168, in start
+    ServerAdapter.start(self)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 170, in start
+    wait_for_free_port(*self.bind_addr)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 438, in wait_for_free_port
+    raise IOError("Port %r not free on %r" % (port, host))
+IOError: Port 8080 not free on '0.0.0.0'
+
+[17/Oct/2015:01:10:58] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 241, in start
+    self.publish('start')
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 221, in publish
+    raise exc
+ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
+
+[17/Oct/2015:01:10:58] ENGINE Bus STOPPING
+[17/Oct/2015:01:10:58] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:10:58] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:10:58] ENGINE Bus STOPPED
+[17/Oct/2015:01:10:58] ENGINE Bus EXITING
+[17/Oct/2015:01:10:58] ENGINE Bus EXITED
+[17/Oct/2015:01:16:18] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:16:18] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:16:18] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:16:18] ENGINE Bus STARTING
+[17/Oct/2015:01:16:18] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:16:19] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:16:19] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:16:19] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:16:19] ENGINE Bus STARTING
+[17/Oct/2015:01:16:19] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:16:24] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x763f41d0>>
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 203, in publish
+    output.append(listener(*args, **kwargs))
+  File "/usr/lib/python2.7/site-packages/cherrypy/_cpserver.py", line 168, in start
+    ServerAdapter.start(self)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 170, in start
+    wait_for_free_port(*self.bind_addr)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 438, in wait_for_free_port
+    raise IOError("Port %r not free on %r" % (port, host))
+IOError: Port 8080 not free on '0.0.0.0'
+
+[17/Oct/2015:01:16:24] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 241, in start
+    self.publish('start')
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 221, in publish
+    raise exc
+ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
+
+[17/Oct/2015:01:16:24] ENGINE Bus STOPPING
+[17/Oct/2015:01:16:24] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:16:24] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:16:24] ENGINE Bus STOPPED
+[17/Oct/2015:01:16:24] ENGINE Bus EXITING
+[17/Oct/2015:01:16:24] ENGINE Bus EXITED
+[17/Oct/2015:01:16:24] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x7640f1f0>>
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 203, in publish
+    output.append(listener(*args, **kwargs))
+  File "/usr/lib/python2.7/site-packages/cherrypy/_cpserver.py", line 168, in start
+    ServerAdapter.start(self)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 170, in start
+    wait_for_free_port(*self.bind_addr)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 438, in wait_for_free_port
+    raise IOError("Port %r not free on %r" % (port, host))
+IOError: Port 8080 not free on '0.0.0.0'
+
+[17/Oct/2015:01:16:24] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 241, in start
+    self.publish('start')
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 221, in publish
+    raise exc
+ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
+
+[17/Oct/2015:01:16:24] ENGINE Bus STOPPING
+[17/Oct/2015:01:16:24] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:16:24] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:16:24] ENGINE Bus STOPPED
+[17/Oct/2015:01:16:24] ENGINE Bus EXITING
+[17/Oct/2015:01:16:24] ENGINE Bus EXITED
+[17/Oct/2015:01:16:42] ENGINE Caught signal SIGTERM.
+[17/Oct/2015:01:16:42] ENGINE Bus STOPPING
+[17/Oct/2015:01:16:43] ENGINE Caught signal SIGHUP.
+[17/Oct/2015:01:16:43] ENGINE SIGHUP caught but not daemonized. Exiting.
+[17/Oct/2015:01:16:43] ENGINE Bus STOPPING
+[17/Oct/2015:01:16:43] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:16:43] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:16:43] ENGINE Bus STOPPED
+[17/Oct/2015:01:16:43] ENGINE Bus EXITING
+[17/Oct/2015:01:16:43] ENGINE Bus EXITED
+[17/Oct/2015:01:16:43] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+[17/Oct/2015:01:16:43] ENGINE No thread running for None.
+[17/Oct/2015:01:16:43] ENGINE Bus STOPPED
+[17/Oct/2015:01:16:43] ENGINE Bus EXITING
+[17/Oct/2015:01:16:43] ENGINE Bus EXITED
+[17/Oct/2015:01:16:43] ENGINE Waiting for child threads to terminate...
+[17/Oct/2015:01:18:38] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:18:38] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:18:38] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:18:38] ENGINE Bus STARTING
+[17/Oct/2015:01:18:38] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:18:38] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:18:38] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:18:38] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:18:38] ENGINE Bus STARTING
+[17/Oct/2015:01:18:38] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:18:39] ENGINE Serving on http://0.0.0.0:8080
+[17/Oct/2015:01:18:39] ENGINE Bus STARTED
+[17/Oct/2015:01:18:44] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x763c8fb0>>
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 203, in publish
+    output.append(listener(*args, **kwargs))
+  File "/usr/lib/python2.7/site-packages/cherrypy/_cpserver.py", line 168, in start
+    ServerAdapter.start(self)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 170, in start
+    wait_for_free_port(*self.bind_addr)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 438, in wait_for_free_port
+    raise IOError("Port %r not free on %r" % (port, host))
+IOError: Port 8080 not free on '0.0.0.0'
+
+[17/Oct/2015:01:18:44] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 241, in start
+    self.publish('start')
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 221, in publish
+    raise exc
+ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
+
+[17/Oct/2015:01:18:44] ENGINE Bus STOPPING
+[17/Oct/2015:01:18:44] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:18:44] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:18:44] ENGINE Bus STOPPED
+[17/Oct/2015:01:18:44] ENGINE Bus EXITING
+[17/Oct/2015:01:18:44] ENGINE Bus EXITED
+[17/Oct/2015:01:18:53] ENGINE Caught signal SIGTERM.
+[17/Oct/2015:01:18:53] ENGINE Bus STOPPING
+[17/Oct/2015:01:18:53] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+[17/Oct/2015:01:18:53] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:18:53] ENGINE Bus STOPPED
+[17/Oct/2015:01:18:53] ENGINE Bus EXITING
+[17/Oct/2015:01:18:53] ENGINE Bus EXITED
+[17/Oct/2015:01:18:53] ENGINE Waiting for child threads to terminate...
+[17/Oct/2015:01:08:31] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:08:31] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:08:31] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:08:31] ENGINE Bus STARTING
+[17/Oct/2015:01:08:31] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:08:32] ENGINE Serving on http://0.0.0.0:8080
+[17/Oct/2015:01:08:32] ENGINE Bus STARTED
+[17/Oct/2015:01:08:32] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:08:32] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:08:32] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:08:32] ENGINE Bus STARTING
+[17/Oct/2015:01:08:32] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:08:37] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x763771f0>>
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 203, in publish
+    output.append(listener(*args, **kwargs))
+  File "/usr/lib/python2.7/site-packages/cherrypy/_cpserver.py", line 168, in start
+    ServerAdapter.start(self)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 170, in start
+    wait_for_free_port(*self.bind_addr)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 438, in wait_for_free_port
+    raise IOError("Port %r not free on %r" % (port, host))
+IOError: Port 8080 not free on '0.0.0.0'
+
+[17/Oct/2015:01:08:37] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 241, in start
+    self.publish('start')
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 221, in publish
+    raise exc
+ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
+
+[17/Oct/2015:01:08:37] ENGINE Bus STOPPING
+[17/Oct/2015:01:08:37] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:08:37] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:08:37] ENGINE Bus STOPPED
+[17/Oct/2015:01:08:37] ENGINE Bus EXITING
+[17/Oct/2015:01:08:37] ENGINE Bus EXITED
+[17/Oct/2015:01:19:47] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:19:47] ENGINE Listening for SIGHUP.
+[17/Oct/2015:01:19:47] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:19:47] ENGINE Listening for SIGTERM.
+[17/Oct/2015:01:19:47] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:19:47] ENGINE Listening for SIGUSR1.
+[17/Oct/2015:01:19:47] ENGINE Bus STARTING
+[17/Oct/2015:01:19:47] ENGINE Bus STARTING
+[17/Oct/2015:01:19:47] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:19:47] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/Oct/2015:01:19:47] ENGINE Error in HTTP server: shutting down
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 205, in _start_http_thread
+    self.httpserver.start()
+  File "/usr/lib/python2.7/site-packages/cherrypy/wsgiserver/wsgiserver2.py", line 1939, in start
+    self.socket.listen(self.request_queue_size)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 98] Address already in use
+
+[17/Oct/2015:01:19:47] ENGINE Bus STOPPING
+[17/Oct/2015:01:19:47] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:19:47] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x7636f1d0>>
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 203, in publish
+    output.append(listener(*args, **kwargs))
+  File "/usr/lib/python2.7/site-packages/cherrypy/_cpserver.py", line 168, in start
+    ServerAdapter.start(self)
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 177, in start
+    self.wait()
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/servers.py", line 226, in wait
+    raise self.interrupt
+error: [Errno 98] Address already in use
+
+[17/Oct/2015:01:19:47] ENGINE Serving on http://0.0.0.0:8080
+[17/Oct/2015:01:19:47] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/Oct/2015:01:19:47] ENGINE Bus STARTED
+[17/Oct/2015:01:19:47] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 241, in start
+    self.publish('start')
+  File "/usr/lib/python2.7/site-packages/cherrypy/process/wspbus.py", line 221, in publish
+    raise exc
+ChannelFailures: error(98, 'Address already in use')
+
+[17/Oct/2015:01:19:47] ENGINE Bus STOPPED
+[17/Oct/2015:01:19:47] ENGINE Bus STOPPING
+[17/Oct/2015:01:19:47] ENGINE Bus EXITING
+[17/Oct/2015:01:19:47] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/Oct/2015:01:19:47] ENGINE Bus EXITED
