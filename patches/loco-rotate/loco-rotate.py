@@ -22,7 +22,7 @@ def draw(screen, mvp):
     for i in range(0, 100) :
         seg(rotated, mvp, i)   
     #last_point = [0, (screen.get_height() // 2)]
-    angle += 47
+    angle += 1
     angle %= 360
     screen.blit(pygame.transform.rotate(rotated, angle), (0,0))
     

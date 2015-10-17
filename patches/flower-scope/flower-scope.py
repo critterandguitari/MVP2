@@ -13,7 +13,7 @@ count4 = 0
 def setup(screen, mvp) :
     global images
     #for filepath in sorted(glob.glob('../patches/imgtest/*.png')):
-    for filepath in sorted(glob.glob('/usbdrive/Images/flowers/*.png')):
+    for filepath in sorted(glob.glob('./web/static/*.png')):
         filename = os.path.basename(filepath)
         print 'loading image file: ' + filename
         img = pygame.image.load(filepath)
@@ -49,7 +49,7 @@ def draw(screen, mvp) :
         rect = image.get_rect()
         #screen.blit(pygame.transform.scale(pygame.transform.rotate(image, mvp.knob1 // 3), (mvp.knob3, mvp.knob4)), (mvp.knob2 // 3,mvp.knob3 // 3) )
         #screen.blit(pygame.transform.scale(pygame.transform.rotate(image, (count1 % 1024) // 3), ((count2 % 1024), (count3 % 1024))), ((count4 % 1024) // 3,mvp.knob3 // 3) )
-        screen.blit(pygame.transform.scale(pygame.transform.rotate(image, (count1 % 1024) // 3), ((count2 % 1024), (count3 % 1024))), ((count4 % 1024) // 3,mvp.knob3 // 3) )
+        screen.blit(pygame.transform.scale(image, ((count2 % 1024), (count3 % 1024))), ((count4 % 1024) // 3,mvp.knob3 // 3) )
     else:
         screen.fill((0,0,0))
     for i in range(0, 100) :

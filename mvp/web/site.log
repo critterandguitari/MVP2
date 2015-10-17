@@ -2942,3 +2942,63 @@ error: [Errno 9] Bad file descriptor
 [01/Apr/2016:03:48:55] ENGINE Started monitor thread '_TimeoutMonitor'.
 [01/Apr/2016:03:48:55] ENGINE Serving on http://0.0.0.0:8080
 [01/Apr/2016:03:48:55] ENGINE Bus STARTED
+[29/Apr/2016:23:30:49] ENGINE Listening for SIGHUP.
+[29/Apr/2016:23:30:49] ENGINE Listening for SIGTERM.
+[29/Apr/2016:23:30:49] ENGINE Listening for SIGUSR1.
+[29/Apr/2016:23:30:49] ENGINE Bus STARTING
+[29/Apr/2016:23:30:49] ENGINE Started monitor thread '_TimeoutMonitor'.
+[29/Apr/2016:23:30:49] ENGINE Serving on http://0.0.0.0:8080
+[29/Apr/2016:23:30:49] ENGINE Bus STARTED
+[30/Apr/2016:00:28:48] ENGINE Listening for SIGHUP.
+[30/Apr/2016:00:28:48] ENGINE Listening for SIGTERM.
+[30/Apr/2016:00:28:48] ENGINE Listening for SIGUSR1.
+[30/Apr/2016:00:28:48] ENGINE Bus STARTING
+[30/Apr/2016:00:28:48] ENGINE Started monitor thread '_TimeoutMonitor'.
+[30/Apr/2016:00:28:49] ENGINE Serving on http://0.0.0.0:8080
+[30/Apr/2016:00:28:49] ENGINE Bus STARTED
+[30/Apr/2016:00:50:45] ENGINE Caught signal SIGTERM.
+[30/Apr/2016:00:50:45] ENGINE Bus STOPPING
+[30/Apr/2016:00:50:45] ENGINE Caught signal SIGHUP.
+[30/Apr/2016:00:50:45] ENGINE SIGHUP caught but not daemonized. Exiting.
+[30/Apr/2016:00:50:45] ENGINE Bus STOPPING
+[30/Apr/2016:00:50:45] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[30/Apr/2016:00:50:45] ENGINE Stopped thread '_TimeoutMonitor'.
+[30/Apr/2016:00:50:45] ENGINE Bus STOPPED
+[30/Apr/2016:00:50:45] ENGINE Bus EXITING
+[30/Apr/2016:00:50:45] ENGINE Bus EXITED
+[30/Apr/2016:00:50:45] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+[30/Apr/2016:00:50:45] ENGINE No thread running for None.
+[30/Apr/2016:00:50:45] ENGINE Bus STOPPED
+[30/Apr/2016:00:50:45] ENGINE Bus EXITING
+[30/Apr/2016:00:50:45] ENGINE Bus EXITED
+[30/Apr/2016:00:50:45] ENGINE Waiting for child threads to terminate...
+[30/Apr/2016:00:54:00] ENGINE Listening for SIGHUP.
+[30/Apr/2016:00:54:00] ENGINE Listening for SIGTERM.
+[30/Apr/2016:00:54:00] ENGINE Listening for SIGUSR1.
+[30/Apr/2016:00:54:00] ENGINE Bus STARTING
+[30/Apr/2016:00:54:00] ENGINE Started monitor thread '_TimeoutMonitor'.
+[30/Apr/2016:00:54:00] ENGINE Serving on http://0.0.0.0:8080
+[30/Apr/2016:00:54:00] ENGINE Bus STARTED
+[30/Apr/2016:11:28:14] ENGINE Listening for SIGHUP.
+[30/Apr/2016:11:28:14] ENGINE Listening for SIGTERM.
+[30/Apr/2016:11:28:14] ENGINE Listening for SIGUSR1.
+[30/Apr/2016:11:28:14] ENGINE Bus STARTING
+[30/Apr/2016:11:28:14] ENGINE Started monitor thread '_TimeoutMonitor'.
+[30/Apr/2016:11:28:14] ENGINE Serving on http://0.0.0.0:8080
+[30/Apr/2016:11:28:14] ENGINE Bus STARTED
+[30/Apr/2016:16:02:55] ENGINE Caught signal SIGHUP.
+[30/Apr/2016:16:02:55] ENGINE SIGHUP caught but not daemonized. Exiting.
+[30/Apr/2016:16:02:55] ENGINE Bus STOPPING
+[30/Apr/2016:16:02:55] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+[30/Apr/2016:16:02:55] ENGINE Stopped thread '_TimeoutMonitor'.
+[30/Apr/2016:16:02:55] ENGINE Bus STOPPED
+[30/Apr/2016:16:02:55] ENGINE Bus EXITING
+[30/Apr/2016:16:02:55] ENGINE Bus EXITED
+[30/Apr/2016:16:02:55] ENGINE Caught signal SIGTERM.
+[30/Apr/2016:16:02:55] ENGINE Bus STOPPING
+[30/Apr/2016:16:02:55] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[30/Apr/2016:16:02:55] ENGINE No thread running for None.
+[30/Apr/2016:16:02:55] ENGINE Bus STOPPED
+[30/Apr/2016:16:02:55] ENGINE Bus EXITING
+[30/Apr/2016:16:02:55] ENGINE Bus EXITED
+[30/Apr/2016:16:02:55] ENGINE Waiting for child threads to terminate...

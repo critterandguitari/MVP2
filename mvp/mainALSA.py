@@ -37,15 +37,24 @@ def knobs_callback(path, args):
     mvp.knob4 = k4
     #print "received '%d'" % (k1)
 
+def keys_callback(path, args) :
+    global mvp
+    k, v = args
+    if (k == 1 and v > 0) :
+        mvp.next_patch = True
+    print str(k) + " " + str(v)
+    
 osc_server.add_method("/knobs", 'iiiiii', knobs_callback)
+osc_server.add_method("/key", 'ii', keys_callback)
+
 
 #setup alsa for sound in
 
 # Open the device in nonblocking capture mode. The last argument could
 # just as well have been zero for blocking mode. Then we could have
 # left out the sleep call in the bottom of the loop
-#inp = alsaaudio.PCM(alsaaudio.PCM_CAPTURE,alsaaudio.PCM_NONBLOCK)
-inp = alsaaudio.PCM(alsaaudio.PCM_CAPTURE,0)
+inp = alsaaudio.PCM(alsaaudio.PCM_CAPTURE,alsaaudio.PCM_NONBLOCK)
+#inp = alsaaudio.PCM(alsaaudio.PCM_CAPTURE,0)
 
 # Set attributes: Mono, 8000 Hz, 16 bit little endian samples
 inp.setchannels(1)
@@ -159,23 +168,18 @@ while 1:
 
 
 
-    count += 1
     #fps = count / (time.time() - start)
-    now = time.time()
-    fps = now - start
-    start = now
   
     
    # if ((count % 200) == 0):
     #`    mvp.next_patch = True        
 
-    if ((count % 1) == 0):
-        #mvp.knob1 = random.randint(0,1024)        
-        #mvp.knob2 = random.randint(0,1024)        
-        #mvp.knob3 = random.randint(0,1024)        
-        #mvp.knob4 = random.randint(0,1024)        
-        mvp.note_on = True
-
+    count += 1
+    if ((count % 100) == 0):
+        now = time.time()
+        fps = 1 / ((now - start) / 100)
+        start = now
+        
     #if count > 1000:
     #    exit()
  
@@ -299,9 +303,19 @@ while 1:
         #print traceback.format_exc()
         error = traceback.format_exc()
 
+
+    #save frame
+    if mvp.screengrab:
+        filenum = 0
+        imagepath = "./web/static/sg-" + str(filenum) + ".png"
+        while os.path.isfile(imagepath):
+            filenum += 1
+            imagepath = "./web/static/sg-" + str(filenum) + ".png"
+        pygame.image.save(screen,imagepath)
+        print imagepath
     
     # osd
-    if True: #mvp.osd :
+    if mvp.osd :
         pygame.draw.rect(screen, OSDBG, (0, screen.get_height() - 40, screen.get_width(), 40))
         font = pygame.font.SysFont(None, 32)
         text = font.render(str(patch.__name__) + ', frame: ' + str(count) + ', fps:' + str(fps), True, WHITE, OSDBG)
@@ -310,13 +324,13 @@ while 1:
         text_rect.centery = screen.get_height() - 20
         screen.blit(text, text_rect)
        
-        if mvp.note_on :
-            notemsg = font.render('note on', True, WHITE, OSDBG)
-        
-        text_rect = notemsg.get_rect()
-        text_rect.x = screen.get_width() - 100
-        text_rect.centery = screen.get_height() - 20
-        screen.blit(notemsg, text_rect)
+#        if mvp.note_on :
+#            notemsg = font.render('note on', True, WHITE, OSDBG)
+#        
+#        text_rect = notemsg.get_rect()
+#        text_rect.x = screen.get_width() - 100
+#        text_rect.centery = screen.get_height() - 20
+#        screen.blit(notemsg, text_rect)
 
         # osd, errors
         i = 0

@@ -33,6 +33,7 @@ class System:
     note_note = 60
 
     aux_button = False
+    screengrab = False
 
     next_patch = False
     prev_patch = False
@@ -80,7 +81,11 @@ class System:
         if len (array) == 1:
             if array[0] == "cs": 
                 self.clear_screen = True
- 
+  
+        if len (array) == 1:
+            if array[0] == "screengrab": 
+                self.screengrab = True
+
         # basic parse sd key (this is supposed to be mapped to shutdowh -h now)
         if len (array) == 1:
             if array[0] == "sd": 
@@ -233,6 +238,7 @@ class System:
         self.set_patch = False
         self.reload_patch = False
         self.aux_button = False
+        self.screengrab = False
 
 
 

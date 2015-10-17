@@ -30,7 +30,7 @@ def draw(screen, mvp):
     if image_index == len(images) : image_index = 0
     owen = images[image_index]
     
-    owen = pygame.transform.scale(pygame.transform.rotate(owen, mvp.knob4 // 5), (mvp.knob3 // 5,mvp.knob3 // 5))
+    owen = pygame.transform.scale(owen, (mvp.knob3,mvp.knob4))
 
     #screen.set_alpha(None)
     #owen.set_alpha(None)

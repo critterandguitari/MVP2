@@ -85,6 +85,10 @@ $(document).ready(function() {
         sendCmd("cs\n");
     });
 
+    $("#screengrab").click(function() {
+        sendCmd("screengrab\n");
+    });
+
 
     $("#reload-patch").click(function() {
         sendCmd("rlp\n");

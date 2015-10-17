@@ -14,7 +14,7 @@ def draw(screen, mvp):
         screen.fill(color) 
           
 
-    if mvp.note_on :
+    if True:#mvp.note_on :
         x=random.randrange(0,1920)  + mvp.knob2 // 2
         y=random.randrange(0,1080)  + mvp.knob3 // 2
         size = mvp.knob1 // 20 + 20
