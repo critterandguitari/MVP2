@@ -6,7 +6,6 @@ import random
 note_down = False
 
 def draw(screen, mvp):
-    screen.fill( (0, 0, 0))
     for i in range(0, 100) :
         seg(screen, mvp, i)    
 

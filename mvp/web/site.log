@@ -3002,3 +3002,10 @@ error: [Errno 9] Bad file descriptor
 [30/Apr/2016:16:02:55] ENGINE Bus EXITING
 [30/Apr/2016:16:02:55] ENGINE Bus EXITED
 [30/Apr/2016:16:02:55] ENGINE Waiting for child threads to terminate...
+[02/May/2016:19:07:15] ENGINE Listening for SIGHUP.
+[02/May/2016:19:07:15] ENGINE Listening for SIGTERM.
+[02/May/2016:19:07:15] ENGINE Listening for SIGUSR1.
+[02/May/2016:19:07:15] ENGINE Bus STARTING
+[02/May/2016:19:07:15] ENGINE Started monitor thread '_TimeoutMonitor'.
+[02/May/2016:19:07:16] ENGINE Serving on http://0.0.0.0:8080
+[02/May/2016:19:07:16] ENGINE Bus STARTED

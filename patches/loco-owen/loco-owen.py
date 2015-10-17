@@ -23,8 +23,7 @@ def setup(screen, mvp):
 
 def draw(screen, mvp):
     global last_point, owen, image_index
-    #screen.fill( (countr, countg, countb))
-    screen.fill( (255, 250, 250))
+
 
     #owen = images[0]
     image_index += 1

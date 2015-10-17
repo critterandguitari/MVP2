@@ -35,13 +35,27 @@ def knobs_callback(path, args):
     mvp.knob2 = k2
     mvp.knob3 = k3
     mvp.knob4 = k4
+    mvp.knob5 = k5
     #print "received '%d'" % (k1)
 
 def keys_callback(path, args) :
     global mvp
     k, v = args
-    if (k == 1 and v > 0) :
-        mvp.next_patch = True
+    if (k == 1 and v > 0) : mvp.next_patch = True
+    if (k == 3 and v > 0) : mvp.prev_patch = True
+    if (k == 2 and v > 0) : mvp.clear_screen = True
+    if (k == 5 and v > 0) : mvp.screengrab = True
+    if (k == 6 and v > 0) : mvp.prev_preset()
+    if (k == 7 and v > 0) : mvp.save_preset()
+    if (k == 8 and v > 0) : mvp.next_preset()
+    if (k == 24 and v > 0) : 
+        if (mvp.osd) : mvp.osd = False
+        else : mvp.osd = True
+    if (k == 23 and v > 0) : 
+        if (mvp.auto_clear) : mvp.auto_clear = False
+        else : mvp.auto_clear = True
+
+
     print str(k) + " " + str(v)
     
 osc_server.add_method("/knobs", 'iiiiii', knobs_callback)
@@ -259,6 +273,10 @@ while 1:
         screen.fill( (0,0,0)) 
         pygame.display.flip()
 
+    if mvp.auto_clear :
+        screen.fill( (mvp.knob5 / 4, mvp.knob5 % 256, (mvp.knob5 * 4) % 256)) 
+
+
     #mvp.note_on = True
 
     # set patch
@@ -307,10 +325,10 @@ while 1:
     #save frame
     if mvp.screengrab:
         filenum = 0
-        imagepath = "./web/static/sg-" + str(filenum) + ".png"
+        imagepath = "/usbdrive/Grabs" + str(filenum) + ".png"
         while os.path.isfile(imagepath):
             filenum += 1
-            imagepath = "./web/static/sg-" + str(filenum) + ".png"
+            imagepath = "/usbdrive/Grabs" + str(filenum) + ".png"
         pygame.image.save(screen,imagepath)
         print imagepath
     

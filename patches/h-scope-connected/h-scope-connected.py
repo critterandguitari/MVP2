@@ -10,7 +10,6 @@ def setup(screen, mvp):
 
 def draw(screen, mvp):
     global last_point
-    screen.fill( (0, 0, 0))
     for i in range(0, 100) :
         seg(screen, mvp, i)   
     #last_point = [0, (screen.get_height() // 2)]

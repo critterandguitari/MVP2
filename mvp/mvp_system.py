@@ -6,6 +6,7 @@ class System:
     knob2 = 200
     knob3 = 200
     knob4 = 200
+    knob5 = 200
     clear_screen = False
     midi_clk = False
     midi_start = False
@@ -34,6 +35,7 @@ class System:
 
     aux_button = False
     screengrab = False
+    auto_clear = True
 
     next_patch = False
     prev_patch = False

@@ -13,7 +13,7 @@ count4 = 0
 def setup(screen, mvp) :
     global images
     #for filepath in sorted(glob.glob('../patches/imgtest/*.png')):
-    for filepath in sorted(glob.glob('/usbdrive/Images/flowers/*.png')):
+    for filepath in sorted(glob.glob('./web/static/*.png')):
         filename = os.path.basename(filepath)
         print 'loading image file: ' + filename
         img = pygame.image.load(filepath)

@@ -13,18 +13,16 @@ def draw(screen, mvp):
         #screen.fill( (1,99,1))
 
         
-    if mvp.note_on :
+    if True :#mvp.note_on :
         count += 1
-        if count > mvp.knob1 // 10 : 
-            count = 0
-            screen.fill( (random.randint(0,255), random.randint(0,255), random.randint(0,255) ))
+#        if count > mvp.knob1 // 10 : 
+#            count = 0
+#            screen.fill( (random.randint(0,255), random.randint(0,255), random.randint(0,255) ))
         x=screen.get_width() / 2#random.randrange(0,screen.get_width())
         y=screen.get_height() / 2#random.randrange(0,screen.get_height())
         pos = (x,y)
         
         font = pygame.font.Font("../patches/Quivira.ttf", mvp.knob2)
-        
-
         
         unistr = get_unicode_character(int((float(mvp.knob3) / 1024) * 12))
         

@@ -16,7 +16,7 @@ ocount = 0
 
 def setup(screen, mvp):
     global images
-    for filepath in sorted(glob.glob('/usbdrive/Images/screengrabs/*.png')):
+    for filepath in sorted(glob.glob('./web/static/*.png')):
         filename = os.path.basename(filepath)
         print 'loading image file: ' + filename
         img = pygame.image.load(filepath)
@@ -30,7 +30,7 @@ def draw(screen, mvp):
     if image_index == len(images) : image_index = 0
     owen = images[image_index]
     
-    owen = pygame.transform.scale(pygame.transform.rotate(owen, mvp.knob4 // 5), (mvp.knob3 // 5,mvp.knob3 // 5))
+    owen = pygame.transform.scale(owen, (mvp.knob3 // 5,mvp.knob3 // 5))
 
     #screen.set_alpha(None)
     #owen.set_alpha(None)

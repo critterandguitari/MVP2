@@ -15,7 +15,7 @@ owen = 0
 def setup(screen, mvp):
     global images
     #for filepath in sorted(glob.glob('../patches/imgtest/*.png')):
-    for filepath in sorted(glob.glob('/usbdrive/Images/screengrabs/*.png')):
+    for filepath in sorted(glob.glob('./web/static/*.png')):
         filename = os.path.basename(filepath)
         print 'loading image file: ' + filename
         img = pygame.image.load(filepath).convert()
@@ -23,8 +23,7 @@ def setup(screen, mvp):
 
 def draw(screen, mvp):
     global last_point, owen, image_index
-    #screen.fill( (countr, countg, countb))
-    screen.fill( (255, 250, 250))
+
 
     #owen = images[0]
     image_index += 1
