@@ -2892,3 +2892,10 @@ error: [Errno 9] Bad file descriptor
 [16/Mar/2016:14:03:22] ENGINE Started monitor thread '_TimeoutMonitor'.
 [16/Mar/2016:14:03:22] ENGINE Serving on http://0.0.0.0:8080
 [16/Mar/2016:14:03:22] ENGINE Bus STARTED
+[16/Mar/2016:19:39:02] ENGINE Listening for SIGHUP.
+[16/Mar/2016:19:39:02] ENGINE Listening for SIGTERM.
+[16/Mar/2016:19:39:02] ENGINE Listening for SIGUSR1.
+[16/Mar/2016:19:39:02] ENGINE Bus STARTING
+[16/Mar/2016:19:39:02] ENGINE Started monitor thread '_TimeoutMonitor'.
+[16/Mar/2016:19:39:02] ENGINE Serving on http://0.0.0.0:8080
+[16/Mar/2016:19:39:02] ENGINE Bus STARTED

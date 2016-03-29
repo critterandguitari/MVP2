@@ -11,10 +11,33 @@ import socket
 import traceback
 import sys
 
+import liblo
+
 from pygame.locals import *
 
 import alsaaudio, audioop
+ 
+#create mvp object
+mvp = mvp_system.System()
+mvp.clear_flags()
 
+# OSC stuff
+try:
+    osc_server = liblo.Server(4000)
+except liblo.ServerError, err:
+    print str(err)
+    sys.exit()
+
+def knobs_callback(path, args):
+    global mvp
+    k1, k2, k3, k4, k5, k6 = args
+    mvp.knob1 = k1
+    mvp.knob2 = k2
+    mvp.knob3 = k3
+    mvp.knob4 = k4
+    #print "received '%d'" % (k1)
+
+osc_server.add_method("/knobs", 'iiiiii', knobs_callback)
 
 #setup alsa for sound in
 
@@ -77,10 +100,7 @@ screen = fullfb.init()
 # Set the height and width of the screen
 #size=[656,416]
 #screen=pygame.display.set_mode(size)
- 
-#create mvp object
-mvp = mvp_system.System()
-mvp.clear_flags()
+
 
 # TODO :  don't make a list of moduels, just make a list of their names, and select them from  sys.modules
 print "loading patches..."
@@ -125,6 +145,9 @@ start = time.time()
 
 while 1:
     
+    #check for OSC
+    osc_server.recv(1)
+
     # quit on esc
     for event in pygame.event.get():
         if event.type == QUIT:
@@ -136,16 +159,20 @@ while 1:
 
 
     count += 1
-    fps = count / (time.time() - start)
+    #fps = count / (time.time() - start)
+    now = time.time()
+    fps = now - start
+    start = now
+  
     
-    #if ((count % 100) == 0):
-    #    mvp.next_patch = True        
+   # if ((count % 200) == 0):
+    #`    mvp.next_patch = True        
 
     if ((count % 1) == 0):
-        mvp.knob1 = random.randint(0,1024)        
-        mvp.knob2 = random.randint(0,1024)        
-        mvp.knob3 = random.randint(0,1024)        
-        mvp.knob4 = random.randint(0,1024)        
+        #mvp.knob1 = random.randint(0,1024)        
+        #mvp.knob2 = random.randint(0,1024)        
+        #mvp.knob3 = random.randint(0,1024)        
+        #mvp.knob4 = random.randint(0,1024)        
         mvp.note_on = True
 
     #if count > 1000:
@@ -154,19 +181,23 @@ while 1:
 
     # get audio
     # Read data from device
-    l,data = inp.read()
-    if l:
-        #print str(audioop.getsample(data, 2 ,0) )
-        for i in range(0,100) :
-            try :
-                avg = audioop.getsample(data, 2, i * 3)
-                avg += audioop.getsample(data, 2, (i * 3) + 1)
-                avg += audioop.getsample(data, 2, (i * 3) + 2)
-                #avg += audioop.getsample(data, 2, (i * 4) + 3)
-                avg = avg / 3
-                mvp.audio_in[i] = avg
-            except :
-                pass
+    #l,data = inp.read()
+    #triggered = False
+    #if l:
+    #    #print str(audioop.getsample(data, 2 ,0) )
+    #    for i in range(0,100) :
+    #        try :
+    #            avg = audioop.getsample(data, 2, i * 3)
+    #            avg += audioop.getsample(data, 2, (i * 3) + 1)
+    #            avg += audioop.getsample(data, 2, (i * 3) + 2)
+    #            #avg += audioop.getsample(data, 2, (i * 4) + 3)
+    #            avg = avg / 3
+    #            if (avg > 1000) :
+    #                triggered = True
+    #            #if (triggered) :
+    #            mvp.audio_in[i] = avg
+    #        except :
+    #            pass
     
         #print str(l)
         # Return the maximum of the absolute value of all samples in a fragment.
@@ -269,7 +300,7 @@ while 1:
 
     
     # osd
-    if mvp.osd :
+    if True: #mvp.osd :
         pygame.draw.rect(screen, OSDBG, (0, screen.get_height() - 40, screen.get_width(), 40))
         font = pygame.font.SysFont(None, 32)
         text = font.render(str(patch.__name__) + ', frame: ' + str(count) + ', fps:' + str(fps), True, WHITE, OSDBG)
