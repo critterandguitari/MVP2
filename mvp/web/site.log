@@ -2899,3 +2899,46 @@ error: [Errno 9] Bad file descriptor
 [16/Mar/2016:19:39:02] ENGINE Started monitor thread '_TimeoutMonitor'.
 [16/Mar/2016:19:39:02] ENGINE Serving on http://0.0.0.0:8080
 [16/Mar/2016:19:39:02] ENGINE Bus STARTED
+[01/Apr/2016:02:24:06] ENGINE Listening for SIGHUP.
+[01/Apr/2016:02:24:06] ENGINE Listening for SIGTERM.
+[01/Apr/2016:02:24:06] ENGINE Listening for SIGUSR1.
+[01/Apr/2016:02:24:06] ENGINE Bus STARTING
+[01/Apr/2016:02:24:06] ENGINE Started monitor thread '_TimeoutMonitor'.
+[01/Apr/2016:02:24:07] ENGINE Serving on http://0.0.0.0:8080
+[01/Apr/2016:02:24:07] ENGINE Bus STARTED
+[01/Apr/2016:02:24:29] ENGINE Keyboard Interrupt: shutting down bus
+[01/Apr/2016:02:24:29] ENGINE Bus STOPPING
+[01/Apr/2016:02:24:34] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+[01/Apr/2016:02:24:34] ENGINE Stopped thread '_TimeoutMonitor'.
+[01/Apr/2016:02:24:34] ENGINE Bus STOPPED
+[01/Apr/2016:02:24:34] ENGINE Bus EXITING
+[01/Apr/2016:02:24:34] ENGINE Bus EXITED
+[01/Apr/2016:02:24:34] ENGINE Waiting for child threads to terminate...
+[01/Apr/2016:02:24:38] ENGINE Listening for SIGHUP.
+[01/Apr/2016:02:24:38] ENGINE Listening for SIGTERM.
+[01/Apr/2016:02:24:38] ENGINE Listening for SIGUSR1.
+[01/Apr/2016:02:24:38] ENGINE Bus STARTING
+[01/Apr/2016:02:24:38] ENGINE Started monitor thread '_TimeoutMonitor'.
+[01/Apr/2016:02:24:38] ENGINE Serving on http://0.0.0.0:8080
+[01/Apr/2016:02:24:38] ENGINE Bus STARTED
+[01/Apr/2016:03:08:48] ENGINE Listening for SIGHUP.
+[01/Apr/2016:03:08:48] ENGINE Listening for SIGTERM.
+[01/Apr/2016:03:08:48] ENGINE Listening for SIGUSR1.
+[01/Apr/2016:03:08:48] ENGINE Bus STARTING
+[01/Apr/2016:03:08:48] ENGINE Started monitor thread '_TimeoutMonitor'.
+[01/Apr/2016:03:08:48] ENGINE Serving on http://0.0.0.0:8080
+[01/Apr/2016:03:08:48] ENGINE Bus STARTED
+[01/Apr/2016:03:45:33] ENGINE Listening for SIGHUP.
+[01/Apr/2016:03:45:33] ENGINE Listening for SIGTERM.
+[01/Apr/2016:03:45:33] ENGINE Listening for SIGUSR1.
+[01/Apr/2016:03:45:33] ENGINE Bus STARTING
+[01/Apr/2016:03:45:33] ENGINE Started monitor thread '_TimeoutMonitor'.
+[01/Apr/2016:03:45:33] ENGINE Serving on http://0.0.0.0:8080
+[01/Apr/2016:03:45:33] ENGINE Bus STARTED
+[01/Apr/2016:03:48:55] ENGINE Listening for SIGHUP.
+[01/Apr/2016:03:48:55] ENGINE Listening for SIGTERM.
+[01/Apr/2016:03:48:55] ENGINE Listening for SIGUSR1.
+[01/Apr/2016:03:48:55] ENGINE Bus STARTING
+[01/Apr/2016:03:48:55] ENGINE Started monitor thread '_TimeoutMonitor'.
+[01/Apr/2016:03:48:55] ENGINE Serving on http://0.0.0.0:8080
+[01/Apr/2016:03:48:55] ENGINE Bus STARTED

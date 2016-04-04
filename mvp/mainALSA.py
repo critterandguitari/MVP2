@@ -146,7 +146,8 @@ start = time.time()
 while 1:
     
     #check for OSC
-    osc_server.recv(1)
+    while (osc_server.recv(1)):
+        pass
 
     # quit on esc
     for event in pygame.event.get():
@@ -181,23 +182,23 @@ while 1:
 
     # get audio
     # Read data from device
-    #l,data = inp.read()
-    #triggered = False
-    #if l:
-    #    #print str(audioop.getsample(data, 2 ,0) )
-    #    for i in range(0,100) :
-    #        try :
-    #            avg = audioop.getsample(data, 2, i * 3)
-    #            avg += audioop.getsample(data, 2, (i * 3) + 1)
-    #            avg += audioop.getsample(data, 2, (i * 3) + 2)
-    #            #avg += audioop.getsample(data, 2, (i * 4) + 3)
-    #            avg = avg / 3
-    #            if (avg > 1000) :
-    #                triggered = True
-    #            #if (triggered) :
-    #            mvp.audio_in[i] = avg
-    #        except :
-    #            pass
+    l,data = inp.read()
+    triggered = False
+    if l:
+        #print str(audioop.getsample(data, 2 ,0) )
+        for i in range(0,100) :
+            try :
+                avg = audioop.getsample(data, 2, i * 3)
+                avg += audioop.getsample(data, 2, (i * 3) + 1)
+                avg += audioop.getsample(data, 2, (i * 3) + 2)
+                #avg += audioop.getsample(data, 2, (i * 4) + 3)
+                avg = avg / 3
+                if (avg > 1000) :
+                    triggered = True
+                #if (triggered) :
+                mvp.audio_in[i] = avg
+            except :
+                pass
     
         #print str(l)
         # Return the maximum of the absolute value of all samples in a fragment.
