@@ -9,7 +9,7 @@ def setup(screen, mvp):
 def draw(screen, mvp):
     above = False
     for i in range(0, 100) :
-        if abs(mvp.audio_in[i]) > 2000 :
+        if abs(mvp.audio_in[i]) > 1000 :
             above = True
     
     if above :

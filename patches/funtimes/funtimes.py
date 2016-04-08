@@ -29,8 +29,8 @@ def seg(screen, mvp, i):
     colorr = (random.randrange(0,255), random.randrange(0,255), random.randrange(0,255))
     color = (0,0,0)
 
-    pygame.draw.rect(screen, colorr, [0,0,20,20], 0)
-    pygame.draw.circle(screen,color,(x + xoffset, y1),mvp.knob1 // 50, 0)
+    pygame.draw.rect(screen, colorr, [random.randrange(0,1280),random.randrange(0,720),5,5], 0)
+    pygame.draw.circle(screen,colorr,(x + xoffset, y1),mvp.knob1 // 50, 0)
     pygame.draw.line(screen, color, last_point, [x + xoffset, y1], mvp.knob2 // 50)
     last_point = [x + xoffset, y1]
 
