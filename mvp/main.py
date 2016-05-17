@@ -253,6 +253,7 @@ while 1:
        
 
 
+   # pygame.time.Clock.tick(30)
     pygame.display.flip()
 
     if mvp.quit :

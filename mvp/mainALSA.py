@@ -31,11 +31,14 @@ except liblo.ServerError, err:
 def knobs_callback(path, args):
     global mvp
     k1, k2, k3, k4, k5, k6 = args
-    mvp.knob1 = k1
-    mvp.knob2 = k2
-    mvp.knob3 = k3
-    mvp.knob4 = k4
-    mvp.knob5 = k5
+
+    mvp.knob1l = k1
+    mvp.knob2l = k2
+    mvp.knob3l = k3
+    mvp.knob4l = k4
+    mvp.knob5l = k5
+   
+
     #print "received '%d'" % (k1)
 
 def keys_callback(path, args) :
@@ -165,12 +168,17 @@ error = ''
 count = 0
 fps = 0
 start = time.time()
+clocker = pygame.time.Clock()
+
 
 while 1:
     
     #check for OSC
     while (osc_server.recv(1)):
         pass
+
+    # get knobs from hardware or preset
+    mvp.update_knobs()
 
     # quit on esc
     for event in pygame.event.get():
@@ -189,9 +197,9 @@ while 1:
     #`    mvp.next_patch = True        
 
     count += 1
-    if ((count % 100) == 0):
+    if ((count % 50) == 0):
         now = time.time()
-        fps = 1 / ((now - start) / 100)
+        fps = 1 / ((now - start) / 50)
         start = now
         
     #if count > 1000:
@@ -249,14 +257,12 @@ while 1:
         pass
 
     if mvp.next_patch: 
-        #print patches
         num += 1
         if num == len(patch_names) : 
             num = 0
         mvp.patch = patch_names[num]
         patch = sys.modules[patch_names[num]]
     if mvp.prev_patch: 
-        #print patches
         num -= 1
         if num < 0 : 
             num = len(patch_names) - 1
@@ -267,15 +273,14 @@ while 1:
 #        screen.fill ((0,0,0))
 #        pygame.display.flip()
 
+    mvp.bg_color =  (mvp.knob5 / 4, mvp.knob5 % 256, (mvp.knob5 * 4) % 256)
 
     if mvp.clear_screen:
         #screen.fill( (random.randint(0,255), random.randint(0,255), random.randint(0,255))) 
-        screen.fill( (0,0,0)) 
-        pygame.display.flip()
+        screen.fill(mvp.bg_color) 
 
     if mvp.auto_clear :
-        screen.fill( (mvp.knob5 / 4, mvp.knob5 % 256, (mvp.knob5 * 4) % 256)) 
-
+        screen.fill(mvp.bg_color) 
 
     #mvp.note_on = True
 
@@ -336,7 +341,7 @@ while 1:
     if mvp.osd :
         pygame.draw.rect(screen, OSDBG, (0, screen.get_height() - 40, screen.get_width(), 40))
         font = pygame.font.SysFont(None, 32)
-        text = font.render(str(patch.__name__) + ', frame: ' + str(count) + ', fps:' + str(fps), True, WHITE, OSDBG)
+        text = font.render(str(patch.__name__) + ', frame: ' + str(count) + ', fps: ' + str(int(fps)) + ', Auto Clear: ' + str(mvp.auto_clear), True, WHITE, OSDBG)
         text_rect = text.get_rect()
         text_rect.x = 50
         text_rect.centery = screen.get_height() - 20
@@ -362,7 +367,7 @@ while 1:
 
        
 
-
+    clocker.tick(35)
     pygame.display.flip()
 
     if mvp.quit :

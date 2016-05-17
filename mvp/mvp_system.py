@@ -1,12 +1,45 @@
 import fileinput
 
 class System:
-    
+
+    # TODO  fix this knob shit up
+
+    # knobs used by patch (either preset or live)
     knob1 = 200
     knob2 = 200
     knob3 = 200
     knob4 = 200
     knob5 = 200
+
+    # live knobs vals
+    knob1l = 200
+    knob2l = 200
+    knob3l = 200
+    knob4l = 200
+    knob5l = 200
+
+    # snapshot of live knobs
+    knob1s = 200
+    knob2s = 200
+    knob3s = 200
+    knob4s = 200
+    knob5s = 200
+
+    # preset knob vals
+    knob1s = 200
+    knob2s = 200
+    knob3s = 200
+    knob4s = 200
+    knob5s = 200
+
+    # if a knob is locked
+    knob1lock = False
+    knob2lock = False
+    knob3lock = False
+    knob4lock = False
+    knob5lock = False
+
+
     clear_screen = False
     midi_clk = False
     midi_start = False
@@ -37,6 +70,8 @@ class System:
     screengrab = False
     auto_clear = True
 
+    bg_color = (0, 0, 0)
+
     next_patch = False
     prev_patch = False
     set_patch = False
@@ -62,7 +97,6 @@ class System:
                     self.osd = False
                 else :
                     self.osd = True
-
   
         if len (array) == 1:
             if array[0] == "quit": 
@@ -191,7 +225,7 @@ class System:
     def save_preset(self):
         print "saving preset"
         fo = open("../presets.txt", "a+")
-        fo.write(self.patch + "," + str(self.knob1) + "," + str(self.knob2) +"," + str(self.knob3) + "," + str(self.knob4) + "\n");
+        fo.write(self.patch + "," + str(self.knob1) + "," + str(self.knob2) +"," + str(self.knob3) + "," + str(self.knob4) +  "," + str(self.knob5) + "," + str(self.auto_clear) + "\n");
         fo.close()
 
     def next_preset(self):
@@ -214,14 +248,74 @@ class System:
 
     def recall_preset(self, preset) :
         array = preset.strip().split(',')
-        if len(array) == 5 :
+        if len(array) == 7 :
             print "recalling preset: " + str(preset)
             self.patch = array[0]
-            self.knob1 = int(array[1])
-            self.knob2 = int(array[2])
-            self.knob3 = int(array[3])
-            self.knob4 = int(array[4])
+            # snapshot current knobs
+            self.knob1s = self.knob1l 
+            self.knob2s = self.knob2l
+            self.knob3s = self.knob3l
+            self.knob4s = self.knob4l 
+            self.knob5s = self.knob5l 
+            
+            # update preset vals
+            self.knob1p = int(array[1])
+            self.knob2p = int(array[2])
+            self.knob3p = int(array[3])
+            self.knob4p = int(array[4])
+            self.knob5p = int(array[5])
+
+            # then lock em, if they locked we'll use the preset value
+            self.knob1lock = self.knob2lock = self.knob3lock = self.knob4lock = self.knob5lock = True
+            if str(array[6]) == "False":
+                self.auto_clear = False
+            else :
+                self.auto_clear = True
             self.set_patch = True
+
+
+    # TODO  fix this,  what the hell!!!!
+    def update_knobs(self) :
+        if self.knob1lock :
+            if abs(self.knob1s - self.knob1l) > 20 :
+                self.knob1lock = False
+                self.knob1 = self.knob1l
+            else : 
+                self.knob1 = self.knob1p
+        else :
+            self.knob1 = self.knob1l
+        if self.knob2lock :
+            if abs(self.knob2s - self.knob2l) > 20 :
+                self.knob2lock = False
+                self.knob2 = self.knob2l
+            else : 
+                self.knob2 = self.knob2p
+        else :
+            self.knob2 = self.knob2l
+        if self.knob3lock :
+            if abs(self.knob3s - self.knob3l) > 20 :
+                self.knob3lock = False
+                self.knob3 = self.knob3l
+            else : 
+                self.knob3 = self.knob3p
+        else :
+            self.knob3 = self.knob3l
+        if self.knob4lock :
+            if abs(self.knob4s - self.knob4l) > 20 :
+                self.knob4lock = False
+                self.knob4 = self.knob4l
+            else : 
+                self.knob4 = self.knob4p
+        else :
+            self.knob5 = self.knob5l
+        if self.knob5lock :
+            if abs(self.knob5s - self.knob5l) > 20 :
+                self.knob5lock = False
+                self.knob5 = self.knob5l
+            else : 
+                self.knob5 = self.knob5p
+        else :
+            self.knob5 = self.knob5l
 
     def clear_flags(self):
         self.next_patch = False

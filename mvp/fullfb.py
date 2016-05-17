@@ -13,13 +13,15 @@ def init():
     
     # Check which frame buffer drivers are available
     # Start with fbcon since directfb hangs with composite output
-    drivers = ['fbcon', 'directfb', 'svgalib']
+    #drivers = ['fbcon', 'directfb', 'svgalib']
+    drivers = ['directfb', 'svgalib']
     found = False
     for driver in drivers:
         # Make sure that SDL_VIDEODRIVER is set
         if not os.getenv('SDL_VIDEODRIVER'):
             os.putenv('SDL_VIDEODRIVER', driver)
         try:
+            print 'Driver: {0} '.format(driver)
             pygame.display.init()
         except pygame.error:
             print 'Driver: {0} failed.'.format(driver)
@@ -35,7 +37,7 @@ def init():
     
     pygame.mouse.set_visible(False)
     screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
-    #screen = pygame.display.set_mode((1280, 720), pygame.FULLSCREEN)
+    #screen = pygame.display.set_mode(size, pygame.FULLSCREEN | pygame.DOUBLEBUF | pygame.HWSURFACE)
     #screen = pygame.display.set_mode(size, pygame.FULLSCREEN | pygame.DOUBLEBUF)
 
 
