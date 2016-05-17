@@ -4,12 +4,16 @@ import time
 import random
 
 count = 0
+background = pygame.Surface((1,1))
 
 def setup(screen, mvp):
-    pass
+    global background
+    background = pygame.Surface(screen.get_size())
+    background.set_colorkey((255,0,255))
+
 
 def draw(screen, mvp):
-    global count
+    global count, background
         #screen.fill( (1,99,1))
     above = False
     for i in range(0, 100) :
@@ -28,15 +32,16 @@ def draw(screen, mvp):
         font = pygame.font.Font("../patches/Quivira.ttf", mvp.knob2)
         
         unistr = get_unicode_character(int((float(mvp.knob3) / 1024) * 12))
-        
         text = font.render(unistr, True, (random.randint(0,255), random.randint(0,255), random.randint(0,255) ))
         textpos = text.get_rect()
         textpos.centerx = random.randrange(0,screen.get_width())
         textpos.centery = random.randrange(0,screen.get_height())
+        background.blit(text, textpos)
+    else :
+        background.fill((255,0,255))
     
-        
-        screen.blit(text, textpos)
-        
+    
+    screen.blit(background, (0,0))
         #time.sleep(.05)
 
 def get_unicode_character(set) :

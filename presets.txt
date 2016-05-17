@@ -23,3 +23,11 @@ funtimes,0,179,885,200,0,False
 funtimes,458,179,885,200,0,False
 basic-scopeFAT,1023,1023,885,200,700,False
 CIRCULAR-1,1023,1023,885,200,700,False
+symbol-random,81,824,1023,73,0,True
+basic-scope-bw,1022,363,87,689,0,True
+cicle-balls-BW,563,0,630,200,0,True
+basic-h-scope,143,183,629,200,0,True
+basic-scope-big-balls,143,183,629,200,0,True
+cicle-balls-BW,143,183,629,200,0,True
+cicle-balls-BW,1023,183,629,200,0,True
+cicle-balls-BW,452,183,629,200,0,True

@@ -3009,3 +3009,26 @@ error: [Errno 9] Bad file descriptor
 [02/May/2016:19:07:15] ENGINE Started monitor thread '_TimeoutMonitor'.
 [02/May/2016:19:07:16] ENGINE Serving on http://0.0.0.0:8080
 [02/May/2016:19:07:16] ENGINE Bus STARTED
+[17/May/2016:14:23:43] ENGINE Listening for SIGHUP.
+[17/May/2016:14:23:43] ENGINE Listening for SIGTERM.
+[17/May/2016:14:23:43] ENGINE Listening for SIGUSR1.
+[17/May/2016:14:23:43] ENGINE Bus STARTING
+[17/May/2016:14:23:43] ENGINE Started monitor thread '_TimeoutMonitor'.
+[17/May/2016:14:23:44] ENGINE Serving on http://0.0.0.0:8080
+[17/May/2016:14:23:44] ENGINE Bus STARTED
+[17/May/2016:17:59:14] ENGINE Caught signal SIGHUP.
+[17/May/2016:17:59:14] ENGINE SIGHUP caught but not daemonized. Exiting.
+[17/May/2016:17:59:14] ENGINE Bus STOPPING
+[17/May/2016:17:59:15] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+[17/May/2016:17:59:15] ENGINE Stopped thread '_TimeoutMonitor'.
+[17/May/2016:17:59:15] ENGINE Bus STOPPED
+[17/May/2016:17:59:15] ENGINE Bus EXITING
+[17/May/2016:17:59:15] ENGINE Bus EXITED
+[17/May/2016:17:59:15] ENGINE Caught signal SIGTERM.
+[17/May/2016:17:59:15] ENGINE Bus STOPPING
+[17/May/2016:17:59:15] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+[17/May/2016:17:59:15] ENGINE No thread running for None.
+[17/May/2016:17:59:15] ENGINE Bus STOPPED
+[17/May/2016:17:59:15] ENGINE Bus EXITING
+[17/May/2016:17:59:15] ENGINE Bus EXITED
+[17/May/2016:17:59:15] ENGINE Waiting for child threads to terminate...
