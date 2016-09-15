@@ -16,7 +16,7 @@ def draw(screen, mvp):
         if abs(mvp.audio_in[i]) > 1000 :
             above = True
         
-    if above :#mvp.note_on :
+    if True : #above :#mvp.note_on :
         count += 1
 #        if count > mvp.knob1 // 10 : 
 #            count = 0

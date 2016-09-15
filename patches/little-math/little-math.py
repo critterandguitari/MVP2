@@ -16,7 +16,7 @@ ocount = 0
 
 def setup(screen, mvp):
     global images
-    for filepath in sorted(glob.glob('./web/static/*.png')):
+    for filepath in sorted(glob.glob('../images/*.png')):
         filename = os.path.basename(filepath)
         print 'loading image file: ' + filename
         img = pygame.image.load(filepath)

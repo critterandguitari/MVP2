@@ -64,6 +64,23 @@ class Root():
         self.send_command("rlp\n")
         return "SAVED " + name
     save.exposed = True
+   
+    def get_grabs(self):
+        
+        images = []
+        for filepath in sorted(glob.glob('../../../*.png')):
+            filename = os.path.basename(filepath)
+            images.append(filename)
+        return json.dumps(images)
+    get_grabs.exposed = True
+
+    def get_grab(self, name):
+        grab_path = '../../../'+name
+        grab = open(grab_path, 'r').read()
+        cherrypy.response.headers['Content-Type'] = "image/png"
+        return grab
+    get_grab.exposed = True
+
 
     # returns list of all the patches
     def index(self):
