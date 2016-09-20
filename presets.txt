@@ -277,3 +277,6 @@ cicle-balls-BW,563,0,630,200,850,True
 funtimes,423,185,885,200,0,False
 colored-grabs,742,821,317,200,410,True
 colored-grabs,742,821,316,200,410,True
+cicle-balls-BW,562,89,629,200,850,True
+cicle-balls-BW,563,0,630,200,850,True
+cicle-balls-BW,563,0,630,200,850,True
