@@ -307,7 +307,7 @@ class System:
             else : 
                 self.knob4 = self.knob4p
         else :
-            self.knob5 = self.knob5l
+            self.knob4 = self.knob4l
         if self.knob5lock :
             if abs(self.knob5s - self.knob5l) > 20 :
                 self.knob5lock = False

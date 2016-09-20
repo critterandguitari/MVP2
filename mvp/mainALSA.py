@@ -31,7 +31,7 @@ except liblo.ServerError, err:
 def knobs_callback(path, args):
     global mvp
     k1, k2, k3, k4, k5, k6 = args
-
+    
     mvp.knob1l = k4
     mvp.knob2l = k1
     mvp.knob3l = k2
