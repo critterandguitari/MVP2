@@ -19,6 +19,7 @@ def seg(screen, mvp, i) :
    # y = i * 10#random.randrange(0,1080)
     color = (random.randrange(0,255))#, random.randrange(0,255), random.randrange(0,255))
     color = (color, color, color)
+    color = mvp.color_picker()
     R = mvp.knob2
     R = R + (mvp.audio_in[i] / 100)
     x = R * math.cos((i /  100.) * 6.28) + 640

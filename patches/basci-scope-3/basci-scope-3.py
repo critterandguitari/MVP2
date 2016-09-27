@@ -14,7 +14,7 @@ def seg(screen, mvp, i) :
     x0 = 960#random.randrange(0,1920)
     x1 = 960 + (mvp.audio_in[i] / 35)#random.randrange(0,1920)
     y = i * 10#random.randrange(0,1080)
-    color = (random.randrange(0,255), random.randrange(0,255), random.randrange(0,255))
+    color = mvp.color_picker()
     
     pygame.draw.line(screen, color, [x0, y], [x1, y], 10)
 

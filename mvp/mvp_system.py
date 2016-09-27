@@ -1,4 +1,6 @@
 import fileinput
+import random
+import math
 
 class System:
 
@@ -64,7 +66,7 @@ class System:
     note_off = False
     note_ch = 1
     note_velocity = 0
-    note_note = 60
+    note_num = 60
 
     aux_button = False
     screengrab = False
@@ -83,7 +85,124 @@ class System:
     quit = False
 
     osd = False
-    
+  
+    brightness = 1
+   
+    def color_picker( self ):
+
+        # convert knob to 0-1
+        control = float(self.knob4)
+        c = float(control) / 1024
+
+        # all the way down random bw
+        rando = random.randrange(0, 2)
+        color = (rando * 255, rando * 255, rando * 255)
+
+        # random greys
+        if c > .02 :
+            rando = random.randrange(0,255)
+            color = (rando, rando, rando)
+        # grey 1
+        if c > .04 :
+            color = (50, 50, 50)
+        # grey 2
+        if c > .06 :
+            color = (100, 100 ,100)
+        # grey 3
+        if c > .08 :
+            color = (150, 150 ,150)
+        # grey 4
+        if c > .10 :
+            color = (150, 150 ,150)
+            
+        # grey 5
+        if c > .12 :
+            color = (200, 200 ,200)
+        # white
+        if c > .14 :
+            color = (250, 250 ,250)
+        #colors
+        if c > .16 :
+            
+            #r = float(control) / 1024 * 255
+            #g = float((control * 2) % 1024) / 1024 * 255
+            #b = float((control * 4) % 1024) / 1024 * 255
+            
+            r = math.sin(c * 2 * math.pi) * .5 + .5
+            g = math.sin(c * 4 * math.pi) * .5 + .5
+            b = math.sin(c * 8 * math.pi) * .5 + .5
+
+
+            color = (r * 255,g * 255,b * 255)
+        # full ranoms
+        if c > .96 :
+            color = (random.randrange(0,255), random.randrange(0,255), random.randrange(0,255))
+        # primary randoms
+        if c > .98 :
+            r = random.randrange(0, 2) * 255
+            g = random.randrange(0, 2) * 255
+            b = random.randrange(0, 2) * 255
+            color = (r,g,b)
+        
+        color2 = (color[0] * self.brightness, color[1] * self.brightness, color[2] * self.brightness)
+        return color2
+ 
+
+  
+    def color_picker_bg( self ):
+
+        # convert knob to 0-1
+        control = self.knob5
+        c = float(control) / 1024
+
+        # all the way down random bw
+        rando = random.randrange(0, 2)
+        color = (rando * 255, rando * 255, rando * 255)
+
+        # random greys
+        if c > .02 :
+            rando = random.randrange(0,255)
+            color = (rando, rando, rando)
+        # grey 1
+        if c > .04 :
+            color = (50, 50, 50)
+        # grey 2
+        if c > .06 :
+            color = (100, 100 ,100)
+        # grey 3
+        if c > .08 :
+            color = (150, 150 ,150)
+        # grey 4
+        if c > .10 :
+            color = (150, 150 ,150)
+            
+        # grey 5
+        if c > .12 :
+            color = (200, 200 ,200)
+        # white
+        if c > .14 :
+            color = (250, 250 ,250)
+        #colors
+        if c > .16 :
+            r = float(control) / 1024 * 255
+            g = float((control * 2) % 1024) / 1024 * 255
+            b = float((control * 4) % 1024) / 1024 * 255
+            color = (r,g,b)
+        # full ranoms
+        if c > .96 :
+            color = (random.randrange(0,255), random.randrange(0,255), random.randrange(0,255))
+        # primary randoms
+        if c > .98 :
+            r = random.randrange(0, 2) * 255
+            g = random.randrange(0, 2) * 255
+            b = random.randrange(0, 2) * 255
+            color = (r,g,b)
+        
+        return color
+ 
+
+
+
     def parse_serial(self, line):
         array = line.split(',')
         #print array

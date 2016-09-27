@@ -28,8 +28,9 @@ def draw(screen, mvp):
         font = pygame.font.Font("../patches/Quivira.ttf", mvp.knob2)
         
         unistr = get_unicode_character(int((float(mvp.knob3) / 1024) * 12))
-        
-        text = font.render(unistr, True, (random.randint(0,255), random.randint(0,255), random.randint(0,255) ))
+        color = mvp.color_picker()
+        c = random.randrange(0,255)
+        text = font.render(unistr, True, (c,c,c, 10))
         textpos = text.get_rect()
         textpos.centerx = random.randrange(0,screen.get_width())
         textpos.centery = random.randrange(0,screen.get_height())

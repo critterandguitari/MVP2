@@ -60,9 +60,19 @@ def keys_callback(path, args) :
 
 
     print str(k) + " " + str(v)
-    
+
+def midi_callback(path, args):
+    global mvp
+    n, v = args
+    mvp.note_on = True
+    mvp.note_num = n
+    mvp.note_velocity = v
+
+
+
 osc_server.add_method("/knobs", 'iiiiii', knobs_callback)
 osc_server.add_method("/key", 'ii', keys_callback)
+osc_server.add_method("/midi", 'ii', midi_callback)
 
 
 #setup alsa for sound in
@@ -273,7 +283,8 @@ while 1:
 #        screen.fill ((0,0,0))
 #        pygame.display.flip()
 
-    mvp.bg_color =  (mvp.knob5 / 4, mvp.knob5 % 256, (mvp.knob5 * 4) % 256)
+    #mvp.bg_color =  (mvp.knob5 / 4, mvp.knob5 % 256, (mvp.knob5 * 4) % 256)
+    mvp.bg_color =  mvp.color_picker_bg()
 
     if mvp.clear_screen:
         #screen.fill( (random.randint(0,255), random.randint(0,255), random.randint(0,255))) 
