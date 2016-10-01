@@ -131,7 +131,9 @@ print "init serial port"
 serialport = serial.Serial("/dev/ttymxc3", 500000)
 
 print "opening frame buffer"
-screen = fullfb.init()
+#screen = fullfb.init()
+hwscreen = pygame.display.set_mode((1280,720),  pygame.FULLSCREEN | pygame.DOUBLEBUF, 32  )
+screen = pygame.Surface(hwscreen.get_size())
 
 # Set the height and width of the screen
 #size=[656,416]
@@ -378,8 +380,10 @@ while 1:
 
        
 
-    clocker.tick(35)
+    #clocker.tick(35)
+    hwscreen.blit(screen, (0,0))
     pygame.display.flip()
+    #time.sleep(.01)
 
     if mvp.quit :
         sys.exit()

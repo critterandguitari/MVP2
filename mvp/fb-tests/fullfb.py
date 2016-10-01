@@ -13,9 +13,9 @@ def init():
     
     # Check which frame buffer drivers are available
     # Start with fbcon since directfb hangs with composite output
-    #drivers = ['fbcon', 'directfb', 'svgalib']
+    drivers = ['fbcon', 'directfb', 'svgalib']
     #drivers = ['directfb', 'svgalib']
-    drivers = ['vesafbdf']
+    #drivers = ['fbcon']
     found = False
     for driver in drivers:
         # Make sure that SDL_VIDEODRIVER is set
@@ -26,7 +26,6 @@ def init():
             pygame.display.init()
         except pygame.error:
             print 'Driver: {0} failed.'.format(driver)
-            exit()
             continue
         found = True
         break

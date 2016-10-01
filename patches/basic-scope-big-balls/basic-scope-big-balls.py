@@ -17,6 +17,6 @@ def seg(screen, mvp, i) :
     bw = random.randrange(0,255)
     color = (bw, bw, bw)
     
-    pygame.draw.circle(screen,color,(x1, y),5, 0)
+    pygame.draw.circle(screen,color,(x1, y),100, 0)
     pygame.draw.line(screen, color, [x0, y], [x1, y], 2)
 
