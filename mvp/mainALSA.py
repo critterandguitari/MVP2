@@ -229,6 +229,7 @@ while 1:
                 avg = audioop.getsample(data, 2, i * 3)
                 avg += audioop.getsample(data, 2, (i * 3) + 1)
                 avg += audioop.getsample(data, 2, (i * 3) + 2)
+                #avg += audioop.getsample(data, 2, (i * 3) + 3)
                 #avg += audioop.getsample(data, 2, (i * 4) + 3)
                 avg = avg / 3
                 if (avg > 1000) :
