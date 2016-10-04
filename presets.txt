@@ -303,3 +303,13 @@ basic-scopeFAT,0,652,935,1023,580,False
 four-column,0,736,372,1023,0,False
 four-column,384,1023,867,239,609,False
 basic-scope2,0,208,499,477,451,True
+h-scope-wow-cool,520,617,1023,1023,0,True
+CIRCULAR-1,911,1023,885,200,700,False
+symbol-random,81,824,1023,73,0,True
+symbol-random,81,824,1023,73,0,True
+symbol-random,81,824,1023,73,0,True
+symbol-random,81,824,1023,73,0,True
+symbol-random,81,824,1023,73,0,True
+symbol-random,81,824,1023,73,0,True
+symbol-random,81,824,1023,73,0,True
+kates-nightmare,63,919,723,359,389,True

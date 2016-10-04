@@ -1,34 +1,48 @@
 import os
 import pygame
-import time
-import random
-import math
+import glob
 
-note_down = False
-lx = 0
-ly = 0
+images = []
+image_index = 0
 
-def draw(screen, mvp):
+fall = 0
+scoot = 0
+
+bg = pygame.Surface((656,416))
+
+
+#global waiting = 0 
+
+
+def setup(screen, mvp) :
+    global images, fall, bg
+    #images = []
+    
+    bg = pygame.Surface((screen.get_width(),screen.get_height()))
+    for filepath in sorted(glob.glob('../images/*.png')):
+        filename = os.path.basename(filepath)
+        print 'loading image file: ' + filename
+        img = pygame.image.load(filepath)
+        img = img.convert()
+        images.append(img)
+
+
+
+def draw(screen, mvp) :
+    global images, image_index, fall, bg, scoot
+    
+    above = False
+    
+    #if waiting == 0 :
     for i in range(0, 100) :
-        seg(screen, mvp, i)    
-
-def seg(screen, mvp, i) :
-    global lx, ly
-    x0 = 960#random.randrange(0,1920)
-    x1 = 960 + (mvp.audio_in[i] / 35)#random.randrange(0,1920)
-   # y = i * 10#random.randrange(0,1080)
-    color = mvp.color_picker()
-
-    R = mvp.knob2
-    R = R + (mvp.audio_in[i] / 100)
-    x = R * math.cos((i /  100.) * 6.28) + 640
-    y = R * math.sin((i /  100.) * 6.28) + 360
-    
-    #pygame.draw.line(screen, color, [lx, ly], [x, y], 1)
-    ly = y
-    lx = x
-    pygame.draw.circle(screen,color,[int(x), int(y)], mvp.knob1 / 50, 0)
-
-    
-    #pygame.draw.line(screen, color, [x0 , y ], [x1 , y+10], 10)
-
+        if abs(mvp.audio_in[i]) > 1000 :
+            above = True
+               # waiting = 4
+    #else 
+      #  waiting -= 1
+  
+    if above:
+        image_index += 1
+        if image_index == len(images) : image_index = 0
+        image = images[image_index]
+        screen.blit(image, (0, 0))

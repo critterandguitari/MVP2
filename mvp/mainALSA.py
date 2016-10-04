@@ -222,7 +222,7 @@ while 1:
     # Read data from device
     l,data = inp.read()
     triggered = False
-    if l:
+    while l:
         #print str(audioop.getsample(data, 2 ,0) )
         for i in range(0,100) :
             try :
@@ -238,6 +238,7 @@ while 1:
                 mvp.audio_in[i] = avg
             except :
                 pass
+        l,data = inp.read()
     
         #print str(l)
         # Return the maximum of the absolute value of all samples in a fragment.
