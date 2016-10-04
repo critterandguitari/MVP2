@@ -12,7 +12,7 @@ def setup(screen, mvp):
 def draw(screen, mvp):
     
     global count
-    if mvp.note_on:
+    if True:
         
         count += 1  
         if count > mvp.knob3:

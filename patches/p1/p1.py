@@ -5,7 +5,7 @@ import random
 
 def draw(screen, mvp):
 
-    if mvp.note_on :
+    if True :
         font = pygame.font.Font("../patches/Quivira.ttf", mvp.knob1 // 2)
         
         # all of them (or a lot of them...)

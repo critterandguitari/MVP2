@@ -12,7 +12,7 @@ def draw(screen, mvp):
         
     global offset
     
-    if mvp.note_on :
+    if True :
     
         num = mvp.knob1 // 100
         

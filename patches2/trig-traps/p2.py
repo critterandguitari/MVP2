@@ -16,7 +16,7 @@ def draw(screen, mvp):
         note_down = False
         print note_down
 
-    if note_down :
+    if True :
         x=random.randrange(0,656)
         y=random.randrange(0,400)
         y1=random.randrange(0,400)

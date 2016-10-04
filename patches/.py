@@ -1,48 +1,51 @@
 import os
 import pygame
-import glob
+import time
+import random
+import pygame.gfxdraw
+count = 0
 
-images = []
-image_index = 0
+def setup(screen, mvp):
+    print "setting up random pies ..."
 
-fall = 0
-scoot = 0
+def draw(screen, mvp):
+    global count
+    #if mvp.half_note: 
+    #    screen.fill((0,0,0))
 
-bg = pygame.Surface((656,416))
+    if True:
+        count += 1  
+        if count > mvp.knob4:
+            count = 0
+            screen.fill((0,0,0))
+            
+        x=random.randrange(0,700)
+        y=random.randrange(0,400)
+        pierad=random.randrange(10,) #radius
+        arcstart=random.randrange(0,360)
+        arcend=random.randrange(0, 360-arcstart)
+        coloralpha=mvp.knob3/4
+#        size = mvp.knob2
+        color = (random.randrange(0,255), random.randrange(0,255), random.randrange(0,255), coloralpha)
+#        width = mvp.knob1 // 50
+#        if width == 0 : width = 1
+#        if width > size : width = size 
+        nestrange=mvp.knob1/8
+        fanrange=mvp.knob2/10
+        count=0
+        for i in range(nestrange):
+            count = i
+            arcstart=random.randrange(0,360)
+            arcend=random.randrange(0, 360-arcstart)
+            for i in range(fanrange):
+                pygame.gfxdraw.pie(screen, screen.get_width()/2, screen.get_height()/2, screen.get_height() - (count*screen.get_height()/nestrange), arcstart + i*fanrange, arcend - i*fanrange, color)
 
+                #pygame.gfxdraw.pie(screen, screen.get_width()/2, screen.get_height()/2, (nestrange-count)*, arcstart + i*fanrange, arcend - i*fanrange, color)
+#            time.sleep(.05)
+            pygame.display.flip() #updates the display surface
+        #screen.fill((0,0,0))
+#        pygame.gfxdraw.pie(screen, x, y, pierad, 5, 50, color)
+#        pygame.draw.circle(screen,color,[x,y],size, 0)
+#        pygame.gfxdraw.aacircle(screen, x, y, size, color)
 
-#global waiting = 0 
-
-
-def setup(screen, mvp) :
-    global images, fall, bg
-    #images = []
-    
-    bg = pygame.Surface((screen.get_width(),screen.get_height()))
-    for filepath in sorted(glob.glob('../images/*.png')):
-        filename = os.path.basename(filepath)
-        print 'loading image file: ' + filename
-        img = pygame.image.load(filepath)
-        img = img.convert()
-        images.append(img)
-
-
-
-def draw(screen, mvp) :
-    global images, image_index, fall, bg, scoot
-    
-    above = False
-    
-    #if waiting == 0 :
-    for i in range(0, 100) :
-        if abs(mvp.audio_in[i]) > 1000 :
-            above = True
-               # waiting = 4
-    #else 
-      #  waiting -= 1
-  
-    if above:
-        image_index += 1
-        if image_index == len(images) : image_index = 0
-        image = images[image_index]
-        screen.blit(image, (0, 0))
+#pgyame.gfxdraw.pie(surface, x, y, radius, arcstart, arcend, color): return None

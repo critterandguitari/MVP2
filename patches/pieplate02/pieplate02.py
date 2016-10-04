@@ -13,7 +13,7 @@ def draw(screen, mvp):
     #if mvp.half_note: 
     #    screen.fill((0,0,0))
 
-    if mvp.note_on:
+    if True:
         count += 1  
         if count > mvp.knob4:
             count = 0
