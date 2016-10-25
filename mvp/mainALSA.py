@@ -32,12 +32,12 @@ def knobs_callback(path, args):
     global mvp
     k1, k2, k3, k4, k5, k6 = args
     
-    mvp.knob1l = k4
-    mvp.knob2l = k1
-    mvp.knob3l = k2
-    mvp.knob4l = k5
-    mvp.knob5l = k3
-   
+    mvp.knob1l = float(k4) / 1023
+    mvp.knob2l = float(k1) / 1023
+    mvp.knob3l = float(k2) / 1023
+    mvp.knob4l = float(k5) / 1023
+    mvp.knob5l = float(k3) / 1023
+    #print mvp.knob5l   
 
     #print "received '%d'" % (k1)
 

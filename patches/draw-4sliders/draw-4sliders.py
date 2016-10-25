@@ -5,10 +5,14 @@ import random
 
 note_down = False
 
+def setup(screen, mvp):
+    pass
+
+
 def draw(screen, mvp):
     
     
-    length = mvp.knob2#random.randrange(100,255)
+    length = int(mvp.knob2 * 1000)
     
     x = 10
     y = 10
@@ -23,18 +27,15 @@ def draw(screen, mvp):
     kwidth = kwidth - 10
     
     color = (random.randrange(0,255), random.randrange(0,255), random.randrange(0,255))
-    pygame.draw.rect(screen, color, [xk1, 0, kwidth, ((float(mvp.knob1) / 1024) * h) ], 0)
+    pygame.draw.rect(screen, color, [xk1, 0, kwidth, (mvp.knob1 * h) ], 0)
     
     color = (random.randrange(0,255), random.randrange(0,255), random.randrange(0,255))
-    pygame.draw.rect(screen, color, [xk2, 0, kwidth, ((float(mvp.knob2) / 1024) * h) ], 0)
+    pygame.draw.rect(screen, color, [xk2, 0, kwidth, (mvp.knob2 * h) ], 0)
     
     color = (random.randrange(0,255), random.randrange(0,255), random.randrange(0,255))
-    pygame.draw.rect(screen, color, [xk3, 0, kwidth, ((float(mvp.knob3) / 1024) * h) ], 0)
+    pygame.draw.rect(screen, color, [xk3, 0, kwidth, (mvp.knob3 * h) ], 0)
     
     color = (random.randrange(0,255), random.randrange(0,255), random.randrange(0,255))
-    pygame.draw.rect(screen, color, [xk4, 0, kwidth, ((float(mvp.knob4) / 1024) * h) ], 0)
-  #  pygame.draw.lie(screen, color, [xk2, y0], [xk1, x + mvp.knob1 // 2, ], kwidth)
-   # pygame.draw.line(screen, color, [xk3, y0], [xk1, x + mvp.knob1 // 2, ], kwidth)
-    #pygame.draw.line(screen, color, [xk4, y0, [xk1, x + mvp.knob1 // 2, ], kwidth)
+    pygame.draw.rect(screen, color, [xk4, 0, kwidth, (mvp.knob4 * h) ], 0)
 
 

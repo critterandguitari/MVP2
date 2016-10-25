@@ -10,7 +10,7 @@ count = 0
 
 def setup(screen, mvp):
     global images
-    for filepath in sorted(glob.glob('../patches/treefill/*.png')):
+    for filepath in sorted(glob.glob('../images/*.png')):
         filename = os.path.basename(filepath)
         print 'loading image file: ' + filename
         img = pygame.image.load(filepath)
@@ -24,12 +24,12 @@ def draw(screen, mvp):
         screen.fill(color) 
     
 
-    if mvp.note_on :
-        x=random.randrange(0,700)
-        y=random.randrange(0,400)
-        size = mvp.knob2
+    if True: #mvp.note_on :
+        x=(random.randrange(0,1400) - 100)
+        y=(random.randrange(0,800) - 50)
+        size = int(mvp.knob2*1000)
         color = (random.randrange(0,255), random.randrange(0,255), random.randrange(0,255))
-        width = mvp.knob1 // 50
+        width = int(mvp.knob1 *20)
         if width == 0 : width = 1
         if width > size : width = size
         pygame.draw.circle(screen,color,[x,y],size, 0)

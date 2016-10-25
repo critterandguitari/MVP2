@@ -6,12 +6,15 @@ import random
 size = 400
 count = 0
 
+def setup(screen, mvp):
+    pass
+
 def draw(screen, mvp):
     global size, count
 
 
     
-    if mvp.note_on :
+    if True: #mvp.note_on :
         
         count += 1
         if count > 7 :
@@ -26,7 +29,7 @@ def draw(screen, mvp):
     #size = mvp.knob2
     
     # force c1 into 0 - 255  (otherwise error, i think)
-            c1 = int(size * (mvp.knob2 / 100)) & 0xff 
+            c1 = int(size * int(mvp.knob2 * 100)) & 0xff 
             color = (c1, 255 - c1, c1)
             pygame.draw.circle(screen,color,[x,y],size)
     #time.sleep(.1)

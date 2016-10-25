@@ -30,7 +30,7 @@ def draw(screen, mvp):
     if image_index == len(images) : image_index = 0
     owen = images[image_index]
 
-    owen = pygame.transform.scale(owen, (mvp.knob3 // 10,mvp.knob3 // 10))
+    owen = pygame.transform.scale(owen, (int(mvp.knob3 *100), int(mvp.knob3 * 100)))
 
     #screen.set_alpha(None)
     #owen.set_alpha(None)
@@ -50,8 +50,8 @@ def seg(screen, mvp, i):
 
     pygame.draw.rect(screen, colorr, [0,0,20,20], 0)
     
-    pygame.draw.circle(screen,color,(x + xoffset, y1),mvp.knob1 // 50, 0)
-    pygame.draw.line(screen, color, last_point, [x + xoffset, y1], mvp.knob2 // 50)
+    pygame.draw.circle(screen,color,(x + xoffset, y1),int(mvp.knob1 * 20), 0)
+    pygame.draw.line(screen, color, last_point, [x + xoffset, y1], int(mvp.knob2 * 20))
     last_point = [x + xoffset, y1]
     
     screen.blit(owen, (x + xoffset, y1))

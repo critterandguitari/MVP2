@@ -12,25 +12,25 @@ def draw(screen, mvp):
         
     global offset
     
-    if mvp.note_on :
+    if True: #mvp.note_on :
     
-        num = mvp.knob1 // 100
+        num = int(mvp.knob1 * 10)
         
         num += 1
     
         width = screen.get_width() // num 
         width = width // 2
     
-        offset += mvp.knob2 // 100
+        offset += int(mvp.knob2 *10)
         if offset > width : offset = 0
     
         length = mvp.knob2#random.randrange(100,255)
     
         color = pygame.Color(random.randrange(0,255), random.randrange(0,255), random.randrange(0,255), 255)
         
-        saturation = mvp.knob3 // 10
+        saturation = int(mvp.knob3 * 100)
         if saturation > 100 : saturation = 100
-        value =  mvp.knob4 // 10
+        value =  int(mvp.knob4 * 100)
         if value > 100 : value = 100
         
        # color.hsva = (color.hsva[0], saturation, value, 100)

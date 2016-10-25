@@ -7,32 +7,32 @@ class System:
     # TODO  fix this knob shit up
 
     # knobs used by patch (either preset or live)
-    knob1 = 200
-    knob2 = 200
-    knob3 = 200
-    knob4 = 200
-    knob5 = 200
+    knob1 = .200
+    knob2 = .200
+    knob3 = .200
+    knob4 = .200
+    knob5 = .200
 
     # live knobs vals
-    knob1l = 200
-    knob2l = 200
-    knob3l = 200
-    knob4l = 200
-    knob5l = 200
+    knob1l = .200
+    knob2l = .200
+    knob3l = .200
+    knob4l = .200
+    knob5l = .200
 
     # snapshot of live knobs
-    knob1s = 200
-    knob2s = 200
-    knob3s = 200
-    knob4s = 200
-    knob5s = 200
+    knob1s = .200
+    knob2s = .200
+    knob3s = .200
+    knob4s = .200
+    knob5s = .200
 
     # preset knob vals
-    knob1s = 200
-    knob2s = 200
-    knob3s = 200
-    knob4s = 200
-    knob5s = 200
+    knob1s = .200
+    knob2s = .200
+    knob3s = .200
+    knob4s = .200
+    knob5s = .200
 
     # if a knob is locked
     knob1lock = False
@@ -91,8 +91,7 @@ class System:
     def color_picker( self ):
 
         # convert knob to 0-1
-        control = float(self.knob4)
-        c = float(control) / 1024
+        c = float(self.knob4)
 
         # all the way down random bw
         rando = random.randrange(0, 2)
@@ -151,10 +150,8 @@ class System:
   
     def color_picker_bg( self ):
 
-        # convert knob to 0-1
-        control = self.knob5
-        c = float(control) / 1024
-
+    
+        c = self.knob5
         # all the way down random bw
         rando = random.randrange(0, 2)
         color = (rando * 255, rando * 255, rando * 255)
@@ -184,10 +181,10 @@ class System:
             color = (250, 250 ,250)
         #colors
         if c > .16 :
-            r = float(control) / 1024 * 255
-            g = float((control * 2) % 1024) / 1024 * 255
-            b = float((control * 4) % 1024) / 1024 * 255
-            color = (r,g,b)
+            r = math.sin(c * 2 * math.pi) * .5 + .5
+            g = math.sin(c * 4 * math.pi) * .5 + .5
+            b = math.sin(c * 8 * math.pi) * .5 + .5
+            color = (r * 255,g * 255,b * 255)
         # full ranoms
         if c > .96 :
             color = (random.randrange(0,255), random.randrange(0,255), random.randrange(0,255))
@@ -378,11 +375,11 @@ class System:
             self.knob5s = self.knob5l 
             
             # update preset vals
-            self.knob1p = int(array[1])
-            self.knob2p = int(array[2])
-            self.knob3p = int(array[3])
-            self.knob4p = int(array[4])
-            self.knob5p = int(array[5])
+            self.knob1p = float(array[1])
+            self.knob2p = float(array[2])
+            self.knob3p = float(array[3])
+            self.knob4p = float(array[4])
+            self.knob5p = float(array[5])
 
             # then lock em, if they locked we'll use the preset value
             self.knob1lock = self.knob2lock = self.knob3lock = self.knob4lock = self.knob5lock = True
@@ -396,7 +393,7 @@ class System:
     # TODO  fix this,  what the hell!!!!
     def update_knobs(self) :
         if self.knob1lock :
-            if abs(self.knob1s - self.knob1l) > 20 :
+            if abs(self.knob1s - self.knob1l) > .05 :
                 self.knob1lock = False
                 self.knob1 = self.knob1l
             else : 
@@ -404,7 +401,7 @@ class System:
         else :
             self.knob1 = self.knob1l
         if self.knob2lock :
-            if abs(self.knob2s - self.knob2l) > 20 :
+            if abs(self.knob2s - self.knob2l) > .05 :
                 self.knob2lock = False
                 self.knob2 = self.knob2l
             else : 
@@ -412,7 +409,7 @@ class System:
         else :
             self.knob2 = self.knob2l
         if self.knob3lock :
-            if abs(self.knob3s - self.knob3l) > 20 :
+            if abs(self.knob3s - self.knob3l) > .05 :
                 self.knob3lock = False
                 self.knob3 = self.knob3l
             else : 
@@ -420,7 +417,7 @@ class System:
         else :
             self.knob3 = self.knob3l
         if self.knob4lock :
-            if abs(self.knob4s - self.knob4l) > 20 :
+            if abs(self.knob4s - self.knob4l) > .05 :
                 self.knob4lock = False
                 self.knob4 = self.knob4l
             else : 
@@ -428,7 +425,7 @@ class System:
         else :
             self.knob4 = self.knob4l
         if self.knob5lock :
-            if abs(self.knob5s - self.knob5l) > 20 :
+            if abs(self.knob5s - self.knob5l) > .05 :
                 self.knob5lock = False
                 self.knob5 = self.knob5l
             else : 

@@ -41,7 +41,7 @@ def draw(screen, mvp) :
     else :
         waiting -= 1
   
-    if mvp.note_on:
+    if True: #mvp.note_on:
         image_index += 1
         if image_index == len(images) : image_index = 0
         image = images[image_index]

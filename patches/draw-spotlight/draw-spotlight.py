@@ -3,17 +3,20 @@ import pygame
 import time
 import random
 
+def setup(screen, mvp):
+    pass
+
 note_down = False
 count = 0
 
 def draw(screen, mvp):
     
     
-    length = mvp.knob2#random.randrange(100,255)
+    length = int(mvp.knob2*1000)
     
     x = 10
     y = 10
-    kwidth = int(screen.get_width() * float(mvp.knob2 / 1024))
+    kwidth = int(screen.get_width() * int(mvp.knob2))
     xk1 = 0
     xk2 = kwidth
     xk3 = kwidth * 2
@@ -24,11 +27,11 @@ def draw(screen, mvp):
     kwidth = kwidth - 10
     
     # convert knob to 0-1
-    c = float(mvp.knob4) / 1024
+    c = int(mvp.knob4)
 
     color = mvp.color_picker()
         
-    pygame.draw.line(screen, color, [screen.get_width() / 2, y0], [screen.get_width() / 2 + mvp.knob3, y0 - ((float(mvp.knob1) / 1024) * h) ], mvp.knob2)
+    pygame.draw.line(screen, color, [640, y0], [640 + int(mvp.knob3*1000), y0 - int(mvp.knob1 * 1000) * h], int(mvp.knob2 * 1000))
 
 
     global count
@@ -39,32 +42,15 @@ def draw(screen, mvp):
     
 
     
-    if mvp.note_on :
+    if True: #mvp.note_on :
         count += 1
         if count > 100 :
             count = 0
         x = count * (w / 100)
         mvp.brightness = 1
         color = mvp.color_picker()
-        offset = mvp.knob1
-        pygame.draw.line(screen, color, [x, mvp.note_num * 2 + mvp.knob3 + offset], [x + mvp.knob2, mvp.note_num * 2 + offset], 20)
+        offset = int(mvp.knob1*1000)
+        pygame.draw.line(screen, color, [x, mvp.note_num * 2 + int(mvp.knob3*1000) + offset], [x + int(mvp.knob2*1000), mvp.note_num * 2 + offset], 20)
     
-
-    #pygame.draw.line(screen, color, [xk1 + kwidth / 2, y0], [xk1 + kwidth / 2, y0 - ((float(mvp.knob1) / 1024) * h) ], kwidth)
-
-        
-
-    
-    #color = ( thing, thing2, thing3 )
-    
-    #pygame.draw.line(screen, color, [xk1 + kwidth / 2, y0], [xk1 + kwidth / 2, y0 - ((float(mvp.knob1) / 1024) * h) ], kwidth)
-    
-  #  pygame.draw.line(screen, color, [xk2 + kwidth / 2, y0], [xk2 + kwidth / 2, y0 - ((float(mvp.knob2) / 1024) * h) ], kwidth)
-
-  #  pygame.draw.line(screen, color, [xk3 + kwidth / 2, y0], [xk3 + kwidth / 2, y0 - ((float(mvp.knob3) / 1024) * h) ], kwidth)
-    
-  #  pygame.draw.lie(screen, color, [xk2, y0], [xk1, x + mvp.knob1 // 2, ], kwidth)
-   # pygame.draw.line(screen, color, [xk3, y0], [xk1, x + mvp.knob1 // 2, ], kwidth)
-    #pygame.draw.line(screen, color, [xk4, y0, [xk1, x + mvp.knob1 // 2, ], kwidth)
 
 

@@ -12,7 +12,7 @@ def draw(screen, mvp):
 
 def seg(screen, mvp, i) :
     
-    x = 960 + (mvp.audio_in[i] / 35)#random.randrange(0,1920)
+    x = 640 + (mvp.audio_in[i] / 35)#random.randrange(0,1920)
     y = i * 10#random.randrange(0,1080)
     color = (random.randrange(0,255), random.randrange(0,255), random.randrange(0,255))
     

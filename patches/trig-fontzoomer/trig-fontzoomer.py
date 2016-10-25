@@ -14,13 +14,13 @@ def draw(screen, mvp):
     global count, size
         #screen.fill( (1,99,1))
         
-    if mvp.note_on :
+    if True: #mvp.note_on :
         count += 1
-        if count > mvp.knob1 // 10 : 
+        if count > int(mvp.knob1*100) : 
             count = 0
             screen.fill( (random.randint(0,255), random.randint(0,255), random.randint(0,255) ))
             
-        size += mvp.knob2 // 4
+        size += int(mvp.knob2 * 250)
         
         if size > 700:
             size = 0
@@ -33,7 +33,7 @@ def draw(screen, mvp):
         
 
         
-        unistr = get_unicode_character(int((float(mvp.knob3) / 1024) * 12))
+        unistr = get_unicode_character(int(mvp.knob3 * 12))
         
         text = font.render(unistr, True, (random.randint(0,255), random.randint(0,255), random.randint(0,255) ))
         textpos = text.get_rect()

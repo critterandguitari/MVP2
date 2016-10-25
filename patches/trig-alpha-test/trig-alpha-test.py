@@ -2,6 +2,7 @@ import os
 import pygame
 import glob
 
+
 images = []
 image_index = 0
 
@@ -21,7 +22,7 @@ def setup(screen, mvp) :
 def draw(screen, mvp) :
     global images, image_index, bg
   
-    if mvp.note_on:
+    if True: #mvp.note_on:
         print 'note is on' 
         image_index += 1
         if image_index == len(images) : image_index = 0
@@ -31,6 +32,6 @@ def draw(screen, mvp) :
         #image.set_alpha(5) #this works
         #image.set_colorkey((range(0,250), range(0,100), range(0,100)))
         #image.set_colorkey((230, 230, 230))
-        image.set_colorkey((mvp.knob1//4, mvp.knob2//4, mvp.knob3//4,))
+        image.set_colorkey((int(mvp.knob1*255), int(mvp.knob2*255), int(mvp.knob3*255),))
         bg.blit(image, rect)
         screen.blit(bg, rect)

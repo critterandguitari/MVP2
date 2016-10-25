@@ -5494,3 +5494,10 @@ ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
 [17/Oct/2015:03:28:39] ENGINE Bus EXITING
 [17/Oct/2015:03:28:39] ENGINE Bus EXITED
 [17/Oct/2015:03:28:39] ENGINE Waiting for child threads to terminate...
+[25/Oct/2016:18:49:54] ENGINE Listening for SIGHUP.
+[25/Oct/2016:18:49:54] ENGINE Listening for SIGTERM.
+[25/Oct/2016:18:49:54] ENGINE Listening for SIGUSR1.
+[25/Oct/2016:18:49:54] ENGINE Bus STARTING
+[25/Oct/2016:18:49:54] ENGINE Started monitor thread '_TimeoutMonitor'.
+[25/Oct/2016:18:49:54] ENGINE Serving on http://0.0.0.0:8080
+[25/Oct/2016:18:49:54] ENGINE Bus STARTED

@@ -26,7 +26,7 @@ def seg(screen, mvp, i) :
     pygame.draw.line(screen, color, [lx, ly], [x, y], 1)
     ly = y
     lx = x
-    pygame.draw.circle(screen,color,[int(x), int(y)], mvp.knob1 / 50, 0)
+    pygame.draw.circle(screen,color,[int(x), int(y)], int(mvp.knob1 *20), 0)
 
     
     #pygame.draw.line(screen, color, [x0 , y ], [x1 , y+10], 10)
